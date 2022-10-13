@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+<link href="{{ url_for('static', filename='images/favicon.ico') }}" rel="icon" />
+<title>{{ resume.name }} - {{ resume.title }} - About</title>
+<meta name="description" content="Your ThemeForest item Name and description">
+<meta name="author" content="{{ resume.name }}">
+<!-- Documentation for the iDocs template can be found here: https://harnishdesign.net/demo/html/idocs/help/ -->
+
+<!-- Stylesheet
+============================== -->
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
+<!-- Font Awesome Icon -->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fontawesome/css/all.min.css') }}" />
+<!-- Magnific Popup -->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/magnific-popup.min.css') }}" />
+<!-- Highlight Syntax -->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/highlight.js.github.css') }}" />
+<!-- Custom Stylesheet -->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/idocs.stylesheet.css') }}" />
+</head>
+
+<body data-spy="scroll" data-target=".idocs-navigation" data-offset="125">
+
+<!-- Preloader -->
+<div class="preloader">
+  <div class="lds-ellipsis">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
+<!-- Preloader End --> 
+
+<!-- Document Wrapper   
+=============================== -->
+<div id="main-wrapper"> 
+  
+  <!-- Header
+  ============================ -->
+  <header id="header" class="sticky-top"> 
+    <!-- Navbar -->
+    <nav class="primary-menu navbar navbar-expand-lg navbar-dropdown-dark">
+      <div class="container-fluid">
+        <!-- Sidebar Toggler -->
+		<button id="sidebarCollapse" class="navbar-toggler d-block d-md-none" type="button"><span></span><span class="w-75"></span><span class="w-50"></span></button>
+		
+		<!-- Logo --> 
+        <a class="logo ml-md-3" href="/" title="Nick Graham"> <img src="{{ url_for('static', filename='images/portrait_nobg.png') }}" alt="Nick Graham" width="90" height="90"/> </a> 
+    <!-- Logo End -->
+        
+		<!-- Navbar Toggler -->
+		<button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#header-nav"><span></span><span></span><span></span></button>
+        
+		<div id="header-nav" class="collapse navbar-collapse justify-content-end">
+          <ul class="navbar-nav">
+            <li><a href="/">Resume</a></li>
+          </ul>
+        </div>
+        <ul class="social-icons social-icons-sm ml-lg-2 mr-2">
+          <li class="social-icons-linkedin"><a data-toggle="tooltip" href="{{ resume.linkedin }}" target="_blank" title="" data-original-title="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+          <li class="social-icons-github"><a data-toggle="tooltip" href="{{ resume.github }}" target="_blank" title="" data-original-title="GitHub"><i class="fab fa-github"></i></a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Navbar End --> 
+  </header>
+  <!-- Header End  -->
+  
+  <!-- Content
+  ============================ -->
+  <div id="content" role="main">
+    
+	<!-- Sidebar Navigation
+	============================ -->
+	<div class="idocs-navigation bg-light">
+      <ul class="nav flex-column ">
+        <li class="nav-item"><a class="nav-link active" href="#intro">Intro</a>
+        <li class="nav-item"><a class="nav-link" href="#technologies">Architecture</a>
+          <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="#technologies">Technologies</a></li>
+            <li class="nav-item"><a class="nav-link" href="#python">Python</a></li>
+            <li class="nav-item"><a class="nav-link" href="#kubernetes">Kubernetes</a></li>
+            <li class="nav-item"><a class="nav-link" href="#linux">Linux</a></li>
+            <li class="nav-item"><a class="nav-link" href="#vmware">VMware</a></li>
+            <li class="nav-item"><a class="nav-link" href="#hardware">Hardware</a></li>
+            <li class="nav-item"><a class="nav-link" href="#diagram">Diagram</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#cicd">CI/CD</a></li>
+        <li class="nav-item"><a class="nav-link" href="#locally">Running Locally</a></li>
+      </ul>
+  </div>
+    
+    <!-- Docs Content
+	============================ -->
+  <div class="idocs-content">
+    <div class="container"> 
+      
+        <!-- Intro Section
+      ============================ -->
+      <section id="intro">
+        <p class="lead">Thanks so much for looking at the docs for my resume site. I've compiled information about how the site works, mostly to showcase some of the technologies I've used to make all of this work. Enjoy!</p>
+        </section>
+          <!-- Technology Diagram
+      ============================ -->
+      <section id="technologies">
+        <h2>Technologies</h2>
+        <p class="lead">The site utilizes a number of technologies to operate.</p>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm">
+              <ul>
+                <li><a href="https://flask.palletsprojects.com/en/2.2.x/">Flask</a> is at the top. Flask is a Python library that provides a very easy way to serve web content, and that's used for everything here.</li>
+                <li><a href="https://www.python.org/">Python</a> is my programming language of choice, and the language this site runs on. At the moment, version 3.10.</li>
+                <li><a href="https://kubernetes.io/">Kubernetes</a> is an <i>amazing</i> container orchestration engine. It provides all the components required to effortlessly deploy new versions of this site through code, as well as handle capacity and networking changes.</li>
+                <li><a href="https://www.docker.com/">Docker</a>, of course. All of the containers for Kubernetes run on Docker, so Docker has to be included in the list.</li>
+                <li><a href="https://ubuntu.com/">Ubuntu</a> is my operating system of choice for container workloads. Generally, I use RHEL/CentOS for traditional things, but container workloads specifically seem to run more reliability on Ubuntu.</li>
+                <li><a href="https://www.vmware.com/">VMware</a> is the hypervisor that I run all of the virtual machines on in my home datacenter. There are more cost effective options, but I find VMware to be a more powerful and effective tool than the others.</li>
+                <li><a href="https://www.supermicro.com/en/">Supermicro</a> hardware provides all of the compute, memory, and storage resources needed to run my workloads.</li>
+              </ul>
+              <p>All of the code, both for Kubernetes and Python, is located on <a href="https://github.com/nicholasjgraham/nickjgraham.com">GitHub</a>.</p>
+          </div>
+            <div class="col-sm">
+              <img src="{{ url_for('static', filename='images/tech_pyramid.png') }}" class="img-fluid">
+            </div>
+        </div>
+      </section>
+          
+      <hr class="divider">
+      
+          <!-- Python
+      ============================ -->
+          <section id="python">
+            <h2>Python</h2>
+            <p class="lead">Flask and Python power all of the logic for the site. Currently, it uses Flask 2.1.2 and Python 3.10. Waitress 2.1.2 is also in use as a WSGI server, to provide a more performant and secure web protocol layer than what Flask comes with.</p>
+            <ul>
+              <li>At the root level of the application, we have a few listeners set up.</li>
+              <ul>
+                <li>
+                  <strong><a href="/">/</a></strong> - The root page for the site. From here, Flask inserts some variables into a static HTML template, and serves that completed page to the browser.
+                </li>
+                <li>
+                  <strong><a href="/favicon.ico">/favicon.ico</a></strong> - A fix for browsers that don't follow favicon information in the HTML metadata, and instead look for the icon in the site root. This just takes the actual (handsome) favicon from disk, and returns it under this URL.
+                </li>
+                <li>
+                  <strong><a href="/about">/about</a></strong> - This page, of course. Similarly to the root page, Flask just inserts some variables into a static template, and serves that page to the browser.
+                </li>
+                <li>
+                  <strong><a href="/pdf">/pdf</a></strong> - An experimental page that I originally intended to generate and serve a nice PDF copy of my resume. Unfortunately, due to some limitations of the libraries available, I wasn't able to get those PDF documents formatted in a manner that I liked. Saving as a PDF in a web browser just works better. Feel free to give it a try yourself to see what I mean.
+                </li>
+                <li>
+                  <strong><a href="/ping">/ping</a></strong> - I like to include /ping endpoints in my applications. These provide an easy way to get the operational status of the underlying web services, before you start worrying about the actual functionality of those services. If we hit /ping, and get "pong" back, we know every bit of the architecture up to and including Flask itself is working as expected. Kubernetes also uses this to know of a container is done starting up.
+                </li>
+                <li>
+                  <strong><a href="/health">/health</a></strong> - I also like to include a more detailed 'health check' endpoint. In this case, it isn't particularly valuable, we could probably just monitor the root page and have the same effect. If there was a database or some other sort of dependency, this function would make a simple call to that to ensure everything works. Kubernetes watches this to make sure a container is healthy.
+                </li>
+              </ul>
+            </ul>
+          </section>
+          
+      <hr class="divider">
+              
+      <!-- Kubernetes
+      ============================ -->
+          <section id="kubernetes">
+            <h2>Kubernetes</h2>
+            <p class="lead">Kubernetes (k8s) is what's used to orchestrate the containers that run the site.</p>
+            <p>I also use Rancher as a k8s orchestration engine. Aside from the convenient web UI, I find that it provides a nice, straightforward way to add and remove k8s cluster nodes.</p> 
+            <p>Rancher also automatically provisions containers (pods), load balancers (ingresses), and any other kubernetes items automatically from code. You can find code for this in the /deploy folder inside the git repository.</p>
+            <img src="{{ url_for('static', filename='images/k8s_yaml.png') }}" class="img-fluid">
+            <p>Active kubernetes elements for the site are:
+              <ul>
+                <li><strong>Deployment</strong> - This defines the functional containers (pods) that run the site. It includes definitions for the container image, replica count, health check, environment variables, and more. </li>
+                <li><strong>Service</strong> - This is, essentially a way to target all of the pods in a deployment, by label. With a service, you can send traffic from another service, or an ingress, to any active pod behind that service, without having to know individual pod names or IPs. </li>
+                <li><strong>Ingress</strong> - Ingresses are the way to link an externally accessible target, like a node port, to a service. Here, you define listening ports, protocols, and certificates that should be used.</li>
+              </ul>
+            </p>
+            <img src="{{ url_for('static', filename='images/k8s_flow.png') }}" class="img-fluid">
+            <p>There is also a similar copy of this for <code>nickjgraham-dev.nickwork.net</code>, which is the development version of this site, and is only privately accessible.</p>
+          </section>
+          
+      <hr class="divider">
+      
+      <!-- Linux
+      ============================ -->
+          <section id="linux">
+            <h2>Linux</h2>
+            <p class="lead">The Linux servers for the system run Ubuntu 22.04.1 LTS. They also run Docker 20.10.17. There are 6 servers in total, providing 2 Kubernetes clusters.</p>
+            <p>
+              <ul>
+                <li>Management Cluster - Runs Rancher
+                  <ul>
+                    <li>rancher-man01</li>
+                    <li>rancher-man02</li>
+                    <li>rancher-man03</li>
+                  </ul>
+                </li>
+                <li>Workload Cluster - Runs everything else
+                  <ul>
+                    <li>rancher-work01</li>
+                    <li>rancher-work02</li>
+                    <li>rancher-work03</li>
+                  </ul>
+                </li>
+              </ul>
+            </p>
+            <p>
+              This is not an ideal architecture. Ideally, we would have 6 or more servers per cluster, where 3 run the etcd/control plane roles, and the remaining 3 (or more) run the worker role. However, considering that each of these servers has 4 CPU, and 8GB of memory, that is a bit too expensive for my home lab. Because of that, all of the servers run all roles.
+            </p>
+          </section>
+          
+      <hr class="divider">
+      
+      <!-- VMWare
+      ============================ -->
+          <section id="vmware">
+            <h2>VMware</h2>
+            <p class="lead">VMware is another critical component of the system, but the architecture is not particularly complex.</p>
+            <p>There is a single VMware host, <code>battlestar</code>, that runs all of my virtual machines, including others that are not involved with this project. It is managed by a vCenter server, but that it is about the extent of its complexity.</p>
+          </section>
+          
+      <hr class="divider">
+      
+          <!-- Hardware
+      ============================ -->
+          <section id="hardware">
+            <h2>Hardware</h2>
+            <p class="lead">Services run off of a single 4U Supermicro server, with these specs:</p>
+            <p>
+              <ul>
+                <li>Motherboard - Supermicro X9DRi-LN4+</li>
+                <li>CPU - 2x Intel E5-2620, total of 12 cores (24 with HT) @ 2.00 GHz</li>
+                <li>Memory - 352 GB</li>
+                <li>Storage:
+                  <ul>
+                    <li>2x 1TB SSD - RAID 1</li>
+                    <li>2x 230 GB SSD - RAID 1</li>
+                    <li>16x 4TB 7200 RPM HDD - RAID 10</li>
+                  </ul>
+                </li>
+                <li>Network - 4x Intel 1 Gbps</li>
+              </ul>
+            </p>
+            <p>This server lives in a small half-height rack with redundant power. It's connected to a Ubiquiti USW-Flex-Mini switch via 1 ethernet cable, because there's no other network redundancy in that location. It's also connected to a Dell Powervault 124T tape library via SAS.</p>
+            <div class="text-center">
+              <a href="{{ url_for('static', filename='images/physical_rack_lg.jpg') }}" target="_blank"><img src="{{ url_for('static', filename='images/physical_rack_thumb.png') }}" class="img-thumbnail"></a>
+            </div>
+          </section>
+
+          <!-- Traffic Flow Diagram
+      ============================ -->
+      <section id="diagram">
+        <h2>Traffic Flow</h2>
+        <p class="lead">What would a documentation page be without a traffic flow diagram?</p>
+        <div class="text-center">
+          <img src="{{ url_for('static', filename='images/traffic_diagram.png') }}" class="img-fluid">
+        </div>
+      </section>      
+          
+      <hr class="divider">
+
+          <!-- CI/CD
+      ============================ -->
+      <section id="cicd">
+        <h2>Continuous Integration / Continuous Delivery</h2>
+        <p class="lead">Changes to this site are built and deployed automatically using a few different tools.</p>
+        <p>
+          <ul>
+            <li><strong><a href="https://github.com/nicholasjgraham/nickjgraham.com">GitHub</a></strong> - Hosts the code.</li>
+            <li><strong><a href="https://www.jenkins.io/">Jenkins</a></strong> - Builds and pushes container images.</li>
+            <li><strong><a href="https://hub.docker.com/repository/docker/nicholasjgraham/nickjgraham.com">DockerHub</a></strong> - Hosts container images.</li>
+            <li><strong><a href="https://fleet.rancher.io/">Fleet</a></strong> - An orchestration engine that runs in Kubernetes, Fleet watches Git for config changes and deploys changes automatically.</li>
+          </ul>
+        </p>
+        <p>The process looks a little something like this:</p>
+        <ol>
+          <li>Code changes are pushed up to GitHub.</li>
+          <li>Jenkins detects changes in the main Git branch and starts a build.</li>
+          <li>Fleet detects changes in Git as well, and updates Kubernetes settings.
+            <ul>
+              <li>Most changes will be applied immediately, but if the specified image is changed, and is not yet available, perhaps to update the version to that of the current build, Kubernetes will just wait idly and keep retrying until the image is ready.</li>
+            </ul>
+          </li>
+          <li>Jenkins builds a container locally and performs linting against the Python code inside that container using flake8.</li>
+          <li>Jenkins builds the container again, and pushes it up to DockerHub with the appropriate tags (build #, and 'latest').</li>
+          <li>If Kubernetes has been waiting from step 3, it will now deploy the applicable version of the image.</li>
+          <li>The change is now live, and all it took was a code change.</li>
+        </ol>
+        <div class="text-center">
+          <img src="{{ url_for('static', filename='images/cicd_diagram.png') }}" class="img-fluid">
+        </div>
+      </section>      
+          
+      <hr class="divider">
+      
+      <!-- Running Locally
+      ============================ -->
+          <section id="locally">
+            <h2>Running Locally</h2>
+            <p class="lead">So, how do you run this site yourself? The answer to that depends on what you have available. You can either run it in a container, or directly on your system with Python.</p>
+            <h3>Docker</h3>
+            <p>Running with Docker is surprisingly straightforward.</p>
+            <p>On your Docker host, run the following command:
+              <code>docker run -p 8080 nicholasjgraham/nickjgraham.com</code>
+            This will download the container image and run it. The container runs on port 8080, so the command includes an instruction to open map that port to the container.
+            </p>
+            <p>To browse, visit <code>http://&lt;your docker host&gt;:8080</code>. Easy!</p>
+            <h3>Python</h3>
+            <p>Running on Python requires a bit of extra setup. First, make sure you have Python 3.10.x installed. You can grab the Windows version of 3.10.7 <a href="https://www.python.org/ftp/python/3.10.7/python-3.10.7-amd64.exe">here</a>. For Linux, the process really depends on your distribution. There's probably something in your package manager you can use, or you can compile from source <a href="https://www.python.org/ftp/python/3.10.7/Python-3.10.7.tgz">here</a>.</p>
+            <p>Then, you'll need to make sure you have git installed. On Linux, you should install git using your package manager. On Windows, you can get an installer <a href="https://git-scm.com/download/win">here</a>.</p>
+            <p>With those ready, you can run through the set up steps.</p>
+            <ol>
+              <li>Open a Bash or Powershell session and navigate to a free directory.</li>
+              <li>Clone the git repository - <code>git clone https://github.com/nicholasjgraham/nickjgraham.com.git</code></li>
+              <li>Change to that new directory - <code>cd nickjgraham.com</code></li>
+              <li>Create the python virtual environment - <code>./py-init.sh</code> on Linux, or <code>./py-init.ps1</code> on Windows.</li>
+              <li>Change to the 'src' directory - <code>cd src</code></li>
+              <li>Start the service - <code>waitress-serve __init__:app</code></li>
+            </ol>
+            <p>You should now be able to reach the app on <a href="http://localhost:8080">http://localhost:8080</a>!</p>
+          </section>
+    </div>
+  </div>
+  <!-- Content end --> 
+  
+  <!-- Footer
+  ============================ -->
+  <footer id="footer" class="section bg-dark footer-text-light">
+    <div class="container">
+      <ul class="social-icons social-icons-lg social-icons-muted justify-content-center mb-3">
+        <li><a data-toggle="tooltip" href="{{ resume.linkedin }}" target="_blank" title="" data-original-title="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+        <li><a data-toggle="tooltip" href="{{ resume.github }}" target="_blank" title="" data-original-title="GitHub"><i class="fab fa-github"></i></a></li>
+      </ul>
+      <p class="text-center">Copyright &copy; {{ current_year }} <a href="{{ resume.website }}">{{ resume.name }}</a></p>
+	  <p class="text-2 text-center mb-0">Page Design by <a class="btn-link" target="_blank" href="http://www.harnishdesign.net/">HarnishDesign</a></p>
+    {% if environ['LOG_LEVEL'] == "DEBUG" %}
+		<p>Version {{ environ['VERSION'] }}</p>
+		{% else %}
+		<!--Version {{ environ['VERSION'] }}-->
+		{% endif %}
+    </div>
+  </footer>
+  <!-- Footer end -->
+  
+</div>
+<!-- Document Wrapper end --> 
+
+<!-- Back To Top --> 
+<a id="back-to-top" data-toggle="tooltip" title="Back to Top" href="javascript:void(0)"><i class="fa fa-chevron-up"></i></a> 
+
+<!-- JavaScript
+============================ -->
+
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script> 
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script> 
+<!-- Highlight JS -->
+<script src="{{ url_for('static', filename='js/highlight.min.js') }}"></script> 
+<!-- Easing --> 
+<script src="{{ url_for('static', filename='js/jquery.easing.min.js') }}"></script> 
+<!-- Magnific Popup --> 
+<script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script> 
+<!-- Custom Script -->
+<script src="{{ url_for('static', filename='js/idocs.theme.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,346 @@
+# This file contains variables that are used to populate different areas of the resume that is generated.
+# It's a little overkill and unnecessary, considering that editing HTML is just as easy, but it's also more fun to implement this way.
+
+from flask import url_for
+
+# Define link_list, which will be a list of keywords that are automatically hyperlinked on the resume page
+
+link_list = {
+    "Ansible": "https://www.ansible.com/",
+    "Mulesoft": "https://www.mulesoft.com/",
+    "Tomcat": "https://tomcat.apache.org/",
+    "Kubernetes": "https://kubernetes.io/",
+    "Jenkins": "https://www.jenkins.io/",
+    "Xerox": "https://www.xerox.com/",
+    "VMware": "https://www.vmware.com/",
+    "Commvault": "https://www.commvault.com/",
+    "Single Sign-On": "https://www.pingidentity.com/en/pingone/pingfederate.html",
+    "VMware Orchestrator": "https://www.vmware.com/products/vrealize-orchestrator.html",
+    "Microsoft Deployment Toolkit": "https://learn.microsoft.com/en-us/mem/configmgr/mdt/",
+    "Spiceworks": "https://www.spiceworks.com/free-help-desk-software/self-hosted/"
+}
+
+# Define the "Resume" class, which will include all of the different components we want to inject into the HTML template
+
+
+class Resume:
+    def __init__(self, name, title):
+        # Define all of the attributes we want to keep track of with this class.
+        # Initially, we just set everything to placeholder values, and we'll create and use set methods to update those values later
+        self.name = name
+        self.title = title
+        self.email = f"{name}&commat;example&period;com"
+        self.linkedin = 'https://linkedin.com'
+        self.github = 'https://github.com'
+        self.website = 'https://example.com'
+        self.summary = 'This is a summary of your career experience.'
+        self.work_experience = [
+            {
+                'title': 'First Job Title',
+                'company': 'First Company',
+                'date': '2020 - Present',
+                'description': 'This is a lengthy description of your time at First Company.',
+                'achievements': [
+                    'This is a compelling list of your achievements at First Company.',
+                    'You should include multiple of them.',
+                    'Unless you only did one thing.',
+                    'But that would be strange.'
+                ],
+                'technologies': {
+                    'These',
+                    'Are',
+                    'The',
+                    'Technologies',
+                    'You',
+                    'Use'
+                }
+            },
+            {
+                'title': 'Second Job Title',
+                'company': 'Second Company',
+                'date': '2016 - 2020',
+                'description': 'This is a lengthy description of your time at Second Company.',
+                'achievements': [
+                    'This is a compelling list of your achievements at Second Company.',
+                    'You should include multiple of them.',
+                    'Unless you only did one thing.',
+                    'But that would still be strange.'
+                ],
+                'technologies': {
+                    'These',
+                    'Are',
+                    'The',
+                    'Technologies',
+                    'You',
+                    'Also',
+                    'Used'
+                }
+            }
+        ]
+        self.main_skills = {
+            'Skill Category 1': {
+                'Skill 1',
+                'Skill 2',
+                'Skill 3'
+            },
+            'Skill Category 2': {
+                'Skill 1',
+                'Skill 2',
+                'Skill 3'
+            }
+        }
+        self.other_skills = {
+            'Other Skill 1',
+            'Other Skill 2',
+            'Other Skill 3',
+            'Other Skill 4'
+        }
+        self.education = [
+            {
+                'degree': 'Latest Degree Name',
+                'name': 'University Name',
+                'date': '2018'
+            },
+            {
+                'degree': 'Earliest Degree Name',
+                'name': 'University Name',
+                'date': '2014'
+            }
+        ]
+        self.certs = [
+            {
+                'name': 'CERTA',
+                'date': 'current',
+                'url': 'https://google.com'
+            },
+            {
+                'name': 'CERTB',
+                'date': '2015'
+            }
+        ]
+        self.interests = {
+            'Interest 1',
+            'Interest 2'
+        }
+
+    def set_email(self, email):
+        self.email = email
+
+    def set_linkedin(self, linkedin):
+        self.linkedin = linkedin
+
+    def set_github(self, github):
+        self.github = github
+
+    def set_website(self, website):
+        self.website = website
+
+    def set_summary(self, summary):
+        self.summary = summary
+
+    def set_work_experience(self, work_experience):
+        self.work_experience = work_experience
+
+    def set_main_skills(self, main_skills):
+        self.main_skills = main_skills
+
+    def set_other_skills(self, other_skills):
+        self.other_skills = other_skills
+
+    def set_education(self, education):
+        self.education = education
+
+    def set_certs(self, certs):
+        self.certs = certs
+
+    def set_interests(self, interests):
+        self.interests = interests
+
+
+def get_resume():
+    # Create a default resume object
+    resume = Resume('Nick Graham', 'Principal Infrastructure Engineer')
+
+    # Customize
+
+    resume.set_email('ngraham1024&commat;gmail&period;com')
+
+    resume.set_linkedin('https://www.linkedin.com/in/ngraham2/')
+
+    resume.set_github('https://github.com/nicholasjgraham')
+
+    resume.set_website('https://nickjgraham.com')
+
+    resume.set_summary('''I'm Nick, an experienced systems engineer with a wide range of proficiencies ranging from simple Linux administration to complex automated application service deployments with kubernetes.
+
+    Over the years I've worked to develop a broad set of skills across the IT space, and at the moment I'm using those to support developers and projects at <a href="https://www.cdphp.com/">Capital District Physician\'s Health Plan</a>, a regional health insurance company in upstate New York.
+    ''')
+
+    resume.set_work_experience([
+        {
+            'title': 'Principal Infrastructure Engineer',
+            'company': 'Capital District Physician\'s Health Plan',
+            'date': '2016 - Present',
+            'description': 'Currently, I work as a leader on the Linux engineering team. My primary duties include serving as subject matter expert for Linux and its related technology stack, seeing technology projects through to completion, as well as developing automation processes to reduce toil and solve business problems.',
+            'achievements': [
+                'Architected and executed Single Sign-On (SSO) system expansion to AWS, creating a globally HA system with no downtime since its creation.',
+                'Fully automated deployment and configuration management of Mulesoft application server architecture using Ansible.',
+                'Containerized legacy Tomcat services into fully automated, reliable solution on Kubernetes.',
+                'Developed multiple CI/CD pipelines in Jenkins to turn complex processes into scheduled, or one-click operations.',
+                'Organized and streamlined Ansible playbook usage, including the development of easy-to-use environment build scripts, and personal training/mentoring for other engineers.',
+                'Developed custom internal site that integrates with our SSO system APIs in order to provide users across the company with a central place to find SSO links, rather than relying on links maintained in wikis or emails.'
+            ],
+            'technologies': {
+                'Linux (RHEL)',
+                'Ansible',
+                'Python',
+                'Kubernetes',
+                'Terraform',
+                'Packer',
+                'Jenkins',
+                'Mulesoft',
+                'Tomcat',
+                'Nginx',
+                'OpenTelemetry',
+                'Ping Federate'
+            }
+        },
+        {
+            'title': 'Systems Engineer',
+            'company': 'Xerox Corporation',
+            'date': '2013 - 2016',
+            'description': 'At Xerox I quickly rose to become the SME for a number of systems, including our VMware infrastructure (thousands of hosts across 6 datacenters and 3 continents), Commvault backup infrastructure, as well as an automated self-service tool that employees could use to build sandbox environments.',
+            'achievements': {
+                'Architected and implemented up all of the backup infrastructure required to support disaster recovery for all of Xerox\'s systems',
+                'Led VMware expansion to two new datacenters in China',
+                'Built VM deployment process automation from the ground up with VMware Orchestrator.',
+                'Enhanced the system lifecycle process around all of our VMware infrastructure, especially around the quick and reliable deployment of system updates.'
+            },
+            'technologies': {
+                'VMware',
+                'Windows Server',
+                'Linux (SLES)',
+                'Powershell'
+            }
+        },
+        {
+            'title': 'Information Systems Intern',
+            'company': 'Saratoga Hospital',
+            'date': '2013 - 2013',
+            'description': 'For my senior year of college, right before graduating, I took up an internship with one of the larger hospitals close to me. There, I learned more about the interpersonal nature of IT, helping users and developers get what they need, than I ever had in any of my college classes. I also started delving into automation, and found my love for reducing toil.',
+            'achievements': {
+                'Developed a fully featured PC deployment solution using the Microsoft Deployment Toolkit (MDT). Before my arrival PC deployments were all done manually, clicking through the installer. After deploying MDT new PC builds were as simple as starting a machine and selecting the PXE boot option.',
+                'Developed custom code for the ticket tracking system (Spiceworks), in order to add some custom fields and workflows that the base product didn\'t provide.'
+            },
+            'technologies': {
+                'Windows Server',
+                'Javascript',
+                'Microsoft Deployment Toolkit'
+            }
+        },
+        {
+            'title': 'IT Technician',
+            'company': 'SUNY Canton',
+            'date': '2009 - 2013',
+            'description': 'While in college, I worked in my school\'s IT department. There, I worked alongside the more senior networking staff, and acted as a junior network engineer, making smaller scale cabling changes, adjusting VLANs and port statuses on switches, and just generally helping out around the shop.',
+            'achievements': {
+                'Developed a PHP application called <a href="https://sourceforge.net/projects/netinv/">NETINV</a> to track the association between switches, patch panel ports, and wall ports in classrooms. Identifying where various switch ports went was a huge hassle at the time, and my contribution removed the painful process of having to manually trace out each network connection when making port changes.'
+            },
+            'technologies': {
+                'Linux',
+                'PHP',
+                'Networking'
+            }
+        }
+    ])
+
+    resume.set_main_skills({
+        'Professional': {
+            'Effective Communication',
+            'Problem Solving',
+            'Project Management',
+            'Teamwork'
+        },
+        'Technical': {
+            'Ansible',
+            'Apache',
+            'Appdynamics',
+            'Artifact Repositories',
+            'Bash',
+            'Commvault',
+            'Javascript',
+            'Jenkins',
+            'Kubernetes',
+            'Linux',
+            'Nginx',
+            'Packer',
+            'Ping Federate (SAML/Oauth)',
+            'Powershell',
+            'Python',
+            'Terraform',
+            'VMware',
+            'Windows'
+        }
+    })
+
+    resume.set_other_skills({
+        'Active Directory',
+        'Amazon Web Services',
+        'Change Management',
+        'Configuration Management',
+        'Databases (MSSQL, MySQL)',
+        'DNS',
+        'Documentation',
+        'ELK (Elasticsearch, Logstash, Kibana)',
+        'IIS',
+        'Log Management',
+        'Mulesoft',
+        'Networking',
+        'Nginx',
+        'Oauth',
+        'Physical Server Administration (Blade/Rack)',
+        'Rancher (Kubernetes)',
+        'RHEL',
+        'SAN Management',
+        'Source Control (Git)',
+        'SSL/TLS Certificates & Ciphers',
+        'Sumologic',
+        'System Integration'
+        'Ubuntu',
+        'VMware Horizon',
+        'VMware PowerCLI'
+
+    })
+
+    resume.set_education([
+        {
+            'degree': 'Bachelor\'s, Information Technology',
+            'name': 'SUNY Canton',
+            'date': '2013'
+        }
+    ])
+
+    resume.set_certs([
+        {
+            'name': 'VMware VCP6-DCV',
+            'date': 'current',
+            'url': url_for('static', filename='vcp6.pdf')
+        },
+        {
+            'name': 'Cisco CCNA',
+            'date': '2013'
+        }
+    ])
+
+    resume.set_interests({
+        '3D Printing',
+        'Music',
+        'Cars',
+        'Dogs',
+        'Landscaping',
+        'Mechanics',
+        'Robotics'
+    })
+
+    # Return the customized resume object
+    return resume

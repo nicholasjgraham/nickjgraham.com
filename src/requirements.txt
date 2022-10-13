@@ -1,0 +1,4 @@
+flask==2.1.2
+waitress==2.1.2
+flake8==4.0.1
+pdfkit==1.0.0

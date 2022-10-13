@@ -1,0 +1,99 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: nickjgrahamcom
+  namespace: nickjgrahamcom
+spec:
+  selector:
+    app: nickjgrahamcom
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nickjgrahamcom
+  namespace: nickjgrahamcom
+  labels:
+    app: nickjgrahamcom
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nickjgrahamcom
+
+  template:
+    metadata:
+      labels:
+        app: nickjgrahamcom
+  
+    spec:
+      containers:
+      - name: nickjgrahamcom
+        image: nicholasjgraham/nickjgraham.com:main
+        imagePullPolicy: Always
+        env:
+          - name: LOG_LEVEL
+            value: "INFO"
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            cpu: 100m
+            memory: 256Mi
+          limits:
+            cpu: 1000m
+            memory: 1024Mi
+        readinessProbe:
+            failureThreshold: 3
+            successThreshold: 1
+            initialDelaySeconds: 0
+            timeoutSeconds: 1
+            periodSeconds: 10
+            httpGet:
+              scheme: HTTP
+              port: 8080
+              path: /health
+        startupProbe:
+            failureThreshold: 3
+            successThreshold: 1
+            initialDelaySeconds: 1
+            timeoutSeconds: 1
+            periodSeconds: 10
+            httpGet:
+              scheme: HTTP
+              port: 8080
+              path: /ping
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  labels:
+    app: nickjgrahamcom
+  name: nickjgrahamcom
+  namespace: nickjgrahamcom
+spec:
+  rules:
+  - host: nickjgraham.nickwork.net
+    http:
+      paths:
+      - backend:
+          service:
+            name: nickjgrahamcom    
+            port:
+              number: 8080
+        path: /
+        pathType: Prefix
+  - host: nickjgraham.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: nickjgrahamcom    
+            port:
+              number: 8080
+        path: /
+        pathType: Prefix

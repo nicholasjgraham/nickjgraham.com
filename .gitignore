@@ -1,0 +1,4 @@
+venv
+activate
+activate.fish
+__pycache__
