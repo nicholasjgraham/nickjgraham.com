@@ -11,7 +11,7 @@ from flask import (Flask, make_response, render_template, request,
 import resume
 import utils
 
-## Logging config
+# # Logging config
 
 # Get the log level from our environment variables, or set a default.
 
@@ -36,7 +36,7 @@ logger = logging.getLogger()
 # Announce startup (and log level)!
 logger.info(f"STARTING! Log level is {logging.getLevelName(logger.getEffectiveLevel())}")
 
-## End logging config
+# # End logging config
 
 # Get the current year to plug into some of our templates
 current_year = datetime.today().year
@@ -202,6 +202,7 @@ def health():
         return response
     # Return the successful response
     return response
+
 
 # Lines below this are to add request/reply information to our logs
 @app.before_request
