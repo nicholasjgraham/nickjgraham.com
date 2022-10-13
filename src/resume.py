@@ -300,13 +300,13 @@ def get_resume():
         'Nginx',
         'Oauth',
         'Physical Server Administration (Blade/Rack)',
-        'Rancher (Kubernetes)',
+        'Rancher',
         'RHEL',
         'SAN Management',
         'Source Control (Git)',
         'SSL/TLS Certificates & Ciphers',
         'Sumologic',
-        'System Integration'
+        'System Integration',
         'Ubuntu',
         'VMware Horizon',
         'VMware PowerCLI'
