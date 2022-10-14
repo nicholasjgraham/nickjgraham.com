@@ -182,11 +182,11 @@ def get_resume():
             'title': 'Principal Infrastructure Engineer',
             'company': 'Capital District Physician\'s Health Plan',
             'date': '2016 - Present',
-            'description': 'Currently, I work as a leader on the Linux engineering team. My primary duties include serving as subject matter expert for Linux and its related technology stack, seeing technology projects through to completion, as well as developing automation processes to reduce toil and solve business problems.',
+            'description': 'Currently, I work as a leader on the Linux engineering team. My primary duties include serving as subject matter expert for Linux and its related technology stack, seeing technology projects through to completion, as well as developing automation processes to reduce toil and solve business problems all while serving as a point of leadership for decision making and responsibility.',
             'achievements': [
                 'Architected and executed Single Sign-On (SSO) system expansion to AWS, creating a multi-region, highly available system with no downtime since its creation.',
                 'Fully automated deployment and configuration management of Mulesoft application server architecture using Ansible.',
-                'Containerized legacy Tomcat services into fully automated, reliable solution on Kubernetes.',
+                'Led the containerization of legacy Tomcat services into fully automated, reliable solution on Kubernetes.',
                 'Created multiple CI/CD pipelines in Jenkins to turn complex processes into scheduled, or one-click operations.',
                 'Organized and streamlined Ansible playbook usage, including the development of easy-to-use environment build scripts, and personal training/mentoring for other engineers.',
                 'Created a custom internal site that integrates with our SSO system APIs in order to provide users across the company with a central place to find SSO links, rather than relying on links maintained in wikis or emails.'
@@ -210,17 +210,17 @@ def get_resume():
             'title': 'Systems Engineer',
             'company': 'Xerox Corporation',
             'date': '2013 - 2016',
-            'description': 'At Xerox I quickly rose to become the subject matter expert for a number of systems, including our VMware infrastructure (thousands of hosts across 6 datacenters and 3 continents), Commvault backup infrastructure, as well as an automated self-service tool I built that employees used to build sandbox environments and adjust the scale of production services.',
+            'description': 'At Xerox I quickly rose to become the subject matter expert for a number of systems, including our VMware infrastructure (thousands of hosts across 6 datacenters and 3 continents), Commvault backup infrastructure, as well as an automated self-service tool I created that employees used to build sandbox environments and adjust the scale of production services.',
             'achievements': {
                 'Architected and implemented up all of the backup infrastructure required to support disaster recovery for all of Xerox\'s systems',
                 'Led VMware expansion to two new datacenters in China, including hardware purchasing, deployment, and configuration.',
-                'Built VM deployment process automation from the ground up with VMware Orchestrator.',
+                'Created a VM deployment process automation from the ground up with VMware Orchestrator.',
                 'Enhanced the system lifecycle process around all of our VMware infrastructure, especially around the quick and reliable deployment of system updates.'
             },
             'technologies': {
                 'VMware',
                 'Windows Server',
-                'Linux (SLES)',
+                'SUSE Linux Enterprise Server',
                 'Powershell'
             }
         },
