@@ -264,23 +264,23 @@ def get_resume():
         },
         'Technical': {
             'Ansible',
-            'Apache',
+            'Apache HTTPd',
             'Appdynamics',
             'Artifact Repositories',
             'Bash',
-            'Commvault',
+            'Commvault Simpana',
             'Javascript',
             'Jenkins',
             'Kubernetes',
             'Linux',
             'Nginx',
-            'Packer',
+            'HashiCorp Packer',
             'Ping Federate (SAML/Oauth)',
             'Powershell',
             'Python',
-            'Terraform',
+            'HashiCorp Terraform',
             'VMware',
-            'Windows'
+            'Windows Server'
         }
     })
 
@@ -301,8 +301,9 @@ def get_resume():
         'Oauth',
         'Physical Server Administration (Blade/Rack)',
         'Rancher',
-        'RHEL',
+        'Red Hat Enterprise Linux (RHEL)',
         'SAN Management',
+        'Sonatype Nexus',
         'Source Control (Git)',
         'SSL/TLS Certificates & Ciphers',
         'Sumologic',
