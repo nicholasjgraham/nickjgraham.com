@@ -182,12 +182,15 @@ def get_resume():
             'title': 'Principal Infrastructure Engineer',
             'company': 'Capital District Physician\'s Health Plan',
             'date': '2016 - Present',
-            'description': 'Currently, I work as a leader on the Linux engineering team. My primary duties include serving as subject matter expert for Linux and its related technology stack, seeing technology projects through to completion, as well as developing automation processes to reduce toil and solve business problems all while serving as a point of leadership for decision making and responsibility.',
+            'description': '''Currently, I work as a leader on the Linux engineering team. My primary duties include serving as subject matter expert for Linux and its related technology stack, seeing technology projects through to completion, as well as developing automation processes to reduce toil and solve business problems all while serving as a point of leadership for decision making and responsibility.
+            
+            I also work as a liaison between the development and infrastructure teams, ensuring that our developers have the tools and support they need to write code and push changes as quickly and effectively as possible.
+            ''',
             'achievements': [
                 'Architected and executed Single Sign-On (SSO) system expansion to AWS, creating a multi-region, highly available system with no downtime since its creation.',
                 'Fully automated deployment and configuration management of Mulesoft application server architecture using Ansible, including over 50 separate services across 4 SDLC environments.',
                 'Led the containerization of legacy Tomcat services into fully automated, reliable solution on Kubernetes.',
-                'Created multiple CI/CD pipelines in Jenkins to turn complex processes like file deployments or configuration changes into scheduled, or one-click operations.',
+                'Created multiple CI/CD pipelines in Jenkins to turn complex processes like code builds, file deployments, or configuration changes into scheduled, or one-click operations.',
                 'Organized and streamlined Ansible playbook usage, including the development of easy-to-use environment build scripts, and personal training/mentoring for other engineers.',
                 'Created a custom internal site that integrates with our SSO system APIs in order to provide users across the company with a central place to find SSO links, rather than relying on links maintained in wikis or emails.'
             ],
