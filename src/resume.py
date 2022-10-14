@@ -337,7 +337,6 @@ def get_resume():
         '3D Printing',
         'Music',
         'Cars',
-        'Dogs',
         'Landscaping',
         'Mechanics',
         'Robotics'
