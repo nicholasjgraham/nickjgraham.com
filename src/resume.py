@@ -172,7 +172,7 @@ def get_resume():
 
     resume.set_website('https://nickjgraham.com')
 
-    resume.set_summary('''I'm Nick, an experienced systems engineer with a wide range of proficiencies ranging from simple Linux administration to complex automated application service deployments with kubernetes.
+    resume.set_summary('''I'm Nick, an experienced systems engineer with a wide range of proficiencies ranging from simple Linux administration to complex automated application service deployments with Kubernetes.
 
     Over the years I've worked to develop a broad set of skills across the IT space, and at the moment I'm using those to support developers and projects at <a href="https://www.cdphp.com/">Capital District Physician\'s Health Plan</a>, a regional health insurance company in upstate New York.
     ''')
@@ -184,15 +184,15 @@ def get_resume():
             'date': '2016 - Present',
             'description': 'Currently, I work as a leader on the Linux engineering team. My primary duties include serving as subject matter expert for Linux and its related technology stack, seeing technology projects through to completion, as well as developing automation processes to reduce toil and solve business problems.',
             'achievements': [
-                'Architected and executed Single Sign-On (SSO) system expansion to AWS, creating a globally HA system with no downtime since its creation.',
+                'Architected and executed Single Sign-On (SSO) system expansion to AWS, creating a multi-region, highly available system with no downtime since its creation.',
                 'Fully automated deployment and configuration management of Mulesoft application server architecture using Ansible.',
                 'Containerized legacy Tomcat services into fully automated, reliable solution on Kubernetes.',
-                'Developed multiple CI/CD pipelines in Jenkins to turn complex processes into scheduled, or one-click operations.',
+                'Created multiple CI/CD pipelines in Jenkins to turn complex processes into scheduled, or one-click operations.',
                 'Organized and streamlined Ansible playbook usage, including the development of easy-to-use environment build scripts, and personal training/mentoring for other engineers.',
-                'Developed a custom internal site that integrates with our SSO system APIs in order to provide users across the company with a central place to find SSO links, rather than relying on links maintained in wikis or emails.'
+                'Created a custom internal site that integrates with our SSO system APIs in order to provide users across the company with a central place to find SSO links, rather than relying on links maintained in wikis or emails.'
             ],
             'technologies': {
-                'Linux (RHEL)',
+                'Red Hat Enterprise Linux',
                 'Ansible',
                 'Python',
                 'Kubernetes',
@@ -230,8 +230,8 @@ def get_resume():
             'date': '2013 - 2013',
             'description': 'For my senior year of college, right before graduating, I took up an internship with one of the larger hospitals close to me. There, I learned about the interpersonal nature of IT, helping users and developers get what they need, more than I ever had in any of my college classes. I also started delving into automation, and found my love for reducing toil.',
             'achievements': {
-                'Developed a fully featured PC deployment solution using the Microsoft Deployment Toolkit (MDT). Before my arrival PC deployments were all done manually, clicking through the installer. After deploying MDT new PC builds were as simple as starting a machine and selecting the PXE boot option.',
-                'Developed custom code for the ticket tracking system (Spiceworks), in order to add some custom fields and workflows that the base product didn\'t provide.'
+                'Created a fully featured PC deployment solution using the Microsoft Deployment Toolkit (MDT). Before my arrival PC deployments were all done manually, clicking through the installer. After deploying MDT new PC builds were as simple as starting a machine and selecting the PXE boot option.',
+                'Created custom code for the ticket tracking system (Spiceworks), in order to add some custom fields and workflows that the base product didn\'t provide.'
             },
             'technologies': {
                 'Windows Server',
@@ -245,7 +245,7 @@ def get_resume():
             'date': '2009 - 2013',
             'description': 'While in college, I worked in my school\'s IT department. There, I worked alongside the more senior networking staff, and acted as a junior network engineer, making smaller scale cabling changes, adjusting VLANs and port statuses on switches, and just generally helping out around the shop.',
             'achievements': {
-                'Developed a PHP application called <a href="https://sourceforge.net/projects/netinv/">NETINV</a> to track the association between switches, patch panel ports, and wall ports in classrooms. Identifying where various switch ports went was a huge hassle at the time, and my contribution removed the painful process of having to manually trace out each network connection when making port changes.'
+                'Created a PHP application called <a href="https://sourceforge.net/projects/netinv/">NETINV</a> to track the association between switches, patch panel ports, and wall ports in classrooms. Identifying where various switch ports went was a huge hassle at the time, and my contribution removed the painful process of having to manually trace out each network connection when making port changes.'
             },
             'technologies': {
                 'Linux',
