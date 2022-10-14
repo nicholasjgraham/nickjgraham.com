@@ -164,7 +164,7 @@ def get_resume():
 
     # Customize
 
-    resume.set_email('ngraham1024&commat;gmail&period;com')
+    resume.set_email('nick&commat;nickjgraham&period;com')
 
     resume.set_linkedin('https://www.linkedin.com/in/ngraham2/')
 
