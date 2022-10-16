@@ -113,7 +113,7 @@
 										    <div class="resume-position-time">{{ job['date'] }}</div>
 									    </div><!--//resume-timeline-item-header-->
 									    <div class="resume-timeline-item-desc">
-										    <p>{{ job['description'] }}</p>
+										    <p>{{ job['description']  | replace('\n', '<br />') | safe }}</p>
 										    <h4 class="resume-timeline-item-desc-heading font-weight-bold">Achievements:</h4>
 										    <ul>
 												{% for achievement in job['achievements'] %}

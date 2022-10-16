@@ -195,51 +195,56 @@ def get_resume():
                 'Created a custom internal site that integrates with our SSO system APIs in order to provide users across the company with a central place to find SSO links, rather than relying on links maintained in wikis or emails.'
             ],
             'technologies': {
-                'Red Hat Enterprise Linux',
                 'Ansible',
-                'Python',
-                'Kubernetes',
-                'Terraform',
-                'Packer',
                 'Jenkins',
+                'Kubernetes',
+                'Linux',
                 'Mulesoft',
-                'Tomcat',
                 'Nginx',
                 'OpenTelemetry',
-                'Ping Federate'
+                'Packer',
+                'Ping Federate',
+                'Python',
+                'Red Hat Enterprise Linux',
+                'Sumologic',
+                'Terraform',
+                'Tomcat',
+                'Windows'
             }
         },
         {
             'title': 'Systems Engineer',
             'company': 'Xerox Corporation',
             'date': '2013 - 2016',
-            'description': 'At Xerox I quickly rose to become the subject matter expert for a number of systems, including our VMware infrastructure (thousands of hosts across 6 datacenters in the US, UK, and China), Commvault backup infrastructure, as well as an automated self-service tool I created that employees used to build sandbox environments and adjust the scale of production services.',
+            'description': 'At Xerox I quickly rose to become the subject matter expert for a number of systems, including our VMware infrastructure (thousands of hosts across 6 datacenters in the US, UK, and China), Commvault backup infrastructure, as well as an automated self-service tool I created that employees used to build sandbox environments and adjust the scale of production services. I also acted as a general systems engineering resource for both Windows and Linux server work.',
             'achievements': {
                 'Architected and implemented up all of the backup infrastructure required to support disaster recovery for all of Xerox\'s systems',
                 'Led VMware expansion to two new datacenters in China, including hardware purchasing, deployment, and configuration.',
                 'Created a VM deployment process automation from the ground up with VMware Orchestrator.',
-                'Enhanced the system lifecycle process around all of our VMware infrastructure, especially around the quick and reliable deployment of system updates.'
+                'Enhanced the system lifecycle process around all of our VMware infrastructure. Everything from creation of new servers, patching existing ones, updating configurations, and server decommissioning was streamlined and automated in some way.'
             },
             'technologies': {
+                'Commvault Simpana',
+                'Linux'
+                'Powershell',
+                'SUSE Linux Enterprise Server',
                 'VMware',
                 'Windows Server',
-                'SUSE Linux Enterprise Server',
-                'Powershell'
             }
         },
         {
             'title': 'Information Systems Intern',
             'company': 'Saratoga Hospital',
             'date': '2013 - 2013',
-            'description': 'For my senior year of college, right before graduating, I took up an internship with one of the larger hospitals close to me. There, I learned about the interpersonal nature of IT, helping users and developers get what they need, more than I ever had in any of my college classes. I also started delving into automation, and found my love for reducing toil.',
+            'description': 'For my senior year of college, right before graduating, I took up an internship with one of the larger hospitals close to me. There I learned about the interpersonal nature of IT, helping users and developers get what they need, more than I ever had in any of my college classes. I also started delving into automation, and found my love for reducing toil.',
             'achievements': {
                 'Created a fully featured PC deployment solution using the Microsoft Deployment Toolkit (MDT). Before my arrival PC deployments were all done manually, clicking through the installer. After deploying MDT new PC builds were as simple as starting a machine and selecting the PXE boot option.',
                 'Created custom code for the ticket tracking system (Spiceworks), in order to add some custom fields and workflows that the base product didn\'t provide.'
             },
             'technologies': {
-                'Windows Server',
                 'Javascript',
                 'Microsoft Deployment Toolkit'
+                'Windows Server',
             }
         },
         {
@@ -252,8 +257,8 @@ def get_resume():
             },
             'technologies': {
                 'Linux',
-                'PHP',
                 'Networking'
+                'PHP',
             }
         }
     ])
@@ -272,16 +277,16 @@ def get_resume():
             'Artifact Repositories',
             'Bash',
             'Commvault Simpana',
+            'HashiCorp Packer',
+            'HashiCorp Terraform',
             'Javascript',
             'Jenkins',
             'Kubernetes',
             'Linux',
             'Nginx',
-            'HashiCorp Packer',
             'Ping Federate (SAML/Oauth)',
             'Powershell',
             'Python',
-            'HashiCorp Terraform',
             'VMware',
             'Windows Server'
         }
@@ -299,9 +304,10 @@ def get_resume():
         'IIS',
         'Log Management',
         'Mulesoft',
+        'Nagios'
         'Networking',
         'Nginx',
-        'Oauth',
+        'Oauth',,
         'Physical Server Administration (Blade/Rack)',
         'Rancher',
         'Red Hat Enterprise Linux (RHEL)',
@@ -339,10 +345,10 @@ def get_resume():
 
     resume.set_interests({
         '3D Printing',
-        'Music',
         'Cars',
         'Landscaping',
         'Mechanics',
+        'Music',
         'Robotics'
     })
 
