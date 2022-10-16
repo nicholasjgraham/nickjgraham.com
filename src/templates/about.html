@@ -143,13 +143,13 @@
               <li>At the root level of the application, we have a few listeners set up.</li>
               <ul>
                 <li>
-                  <strong><a href="/">/</a></strong> - The root page for the site. From here, Flask inserts some variables into a static HTML template, and serves that completed page to the browser.
+                  <strong><a href="/">/</a></strong> - The root page for the site. From here, Flask inserts some variables into a static HTML template, and serves that completed page to the browser. There's also a method in place, <code>utils.auto_link()</code>, that parses the generated HTML and creates hyperlinks based on the first occurrence of a list of keywords. This way, for example, people that may not be familiar with Mulesoft can have a link to more information about it.
                 </li>
                 <li>
                   <strong><a href="/favicon.ico">/favicon.ico</a></strong> - A fix for browsers that don't follow favicon information in the HTML metadata, and instead look for the icon in the site root. This just takes the actual (handsome) favicon from disk, and returns it under this URL.
                 </li>
                 <li>
-                  <strong><a href="/about">/about</a></strong> - This page, of course. Similarly to the root page, Flask just inserts some variables into a static template, and serves that page to the browser.
+                  <strong><a href="/about">/about</a></strong> - This page, of course. Similarly to the root page, Flask just inserts some variables into a static template, and serves that page to the browser. There's no automatic link creation here, though, as that should all be intentional on this page.
                 </li>
                 <li>
                   <strong><a href="/pdf">/pdf</a></strong> - An experimental page that I originally intended to generate and serve a nice PDF copy of my resume. Unfortunately, due to some limitations of the libraries available, I wasn't able to get those PDF documents formatted in a manner that I liked. Saving as a PDF in a web browser just works better. Feel free to give it a try yourself to see what I mean.
@@ -172,9 +172,9 @@
             <h2>Kubernetes</h2>
             <p class="lead">Kubernetes (k8s) is what's used to orchestrate the containers that run the site.</p>
             <p>I also use Rancher as a k8s orchestration engine. Aside from the convenient web UI, I find that it provides a nice, straightforward way to add and remove k8s cluster nodes.</p> 
-            <p>Rancher also automatically provisions containers (pods), load balancers (ingresses), and any other kubernetes items automatically from code. You can find code for this in the /deploy folder inside the git repository.</p>
+            <p>Rancher also automatically provisions containers (pods), load balancers (ingresses), and any other k8s components automatically from code. You can find code for this in the /deploy folder inside the git repository.</p>
             <img src="{{ url_for('static', filename='images/k8s_yaml.png') }}" class="img-fluid">
-            <p>Active kubernetes elements for the site are:
+            <p>Active Kubernetes elements for the site are:
               <ul>
                 <li><strong>Deployment</strong> - This defines the functional containers (pods) that run the site. It includes definitions for the container image, replica count, health check, environment variables, and more. </li>
                 <li><strong>Service</strong> - This is, essentially a way to target all of the pods in a deployment, by label. With a service, you can send traffic from another service, or an ingress, to any active pod behind that service, without having to know individual pod names or IPs. </li>

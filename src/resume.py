@@ -164,7 +164,7 @@ def get_resume():
 
     # Customize
 
-    resume.set_email('ngraham1024&commat;gmail&period;com')
+    resume.set_email('nick&commat;nickjgraham&period;com')
 
     resume.set_linkedin('https://www.linkedin.com/in/ngraham2/')
 
@@ -172,7 +172,7 @@ def get_resume():
 
     resume.set_website('https://nickjgraham.com')
 
-    resume.set_summary('''I'm Nick, an experienced systems engineer with a wide range of proficiencies ranging from simple Linux administration to complex automated application service deployments with kubernetes.
+    resume.set_summary('''I'm Nick, an experienced systems engineer with a wide range of proficiencies ranging from simple Linux administration to complex automated application service deployments with Kubernetes.
 
     Over the years I've worked to develop a broad set of skills across the IT space, and at the moment I'm using those to support developers and projects at <a href="https://www.cdphp.com/">Capital District Physician\'s Health Plan</a>, a regional health insurance company in upstate New York.
     ''')
@@ -182,61 +182,69 @@ def get_resume():
             'title': 'Principal Infrastructure Engineer',
             'company': 'Capital District Physician\'s Health Plan',
             'date': '2016 - Present',
-            'description': 'Currently, I work as a leader on the Linux engineering team. My primary duties include serving as subject matter expert for Linux and its related technology stack, seeing technology projects through to completion, as well as developing automation processes to reduce toil and solve business problems.',
+            'description': '''Currently, I work as a leader on the Linux engineering team. My primary duties include serving as subject matter expert for Linux and its related technology stack, seeing technology projects through to completion, as well as developing automation processes to reduce toil and solve business problems all while serving as a point of leadership for decision making and responsibility.
+
+            I also work as a liaison between the development and infrastructure teams, ensuring that our developers have the tools and support they need to write code and push changes as quickly and effectively as possible.
+            ''',
             'achievements': [
-                'Architected and executed Single Sign-On (SSO) system expansion to AWS, creating a globally HA system with no downtime since its creation.',
-                'Fully automated deployment and configuration management of Mulesoft application server architecture using Ansible.',
-                'Containerized legacy Tomcat services into fully automated, reliable solution on Kubernetes.',
-                'Developed multiple CI/CD pipelines in Jenkins to turn complex processes into scheduled, or one-click operations.',
+                'Architected and executed Single Sign-On (SSO) system expansion to AWS, creating a multi-region, highly available system with no downtime since its creation.',
+                'Fully automated deployment and configuration management of Mulesoft application server architecture using Ansible, including over 50 separate services across 4 SDLC environments.',
+                'Led the containerization of legacy Tomcat services into fully automated, reliable solution on Kubernetes.',
+                'Created multiple CI/CD pipelines in Jenkins to turn complex processes like code builds, file deployments, or configuration changes into scheduled, or one-click operations.',
                 'Organized and streamlined Ansible playbook usage, including the development of easy-to-use environment build scripts, and personal training/mentoring for other engineers.',
-                'Developed a custom internal site that integrates with our SSO system APIs in order to provide users across the company with a central place to find SSO links, rather than relying on links maintained in wikis or emails.'
+                'Created a custom internal site that integrates with our SSO system APIs in order to provide users across the company with a central place to find SSO links, rather than relying on links maintained in wikis or emails.'
             ],
             'technologies': {
-                'Linux (RHEL)',
                 'Ansible',
-                'Python',
-                'Kubernetes',
-                'Terraform',
-                'Packer',
                 'Jenkins',
+                'Kubernetes',
+                'Linux',
                 'Mulesoft',
-                'Tomcat',
                 'Nginx',
                 'OpenTelemetry',
-                'Ping Federate'
+                'Packer',
+                'Ping Federate',
+                'Python',
+                'Red Hat Enterprise Linux',
+                'Sumologic',
+                'Terraform',
+                'Tomcat',
+                'Windows'
             }
         },
         {
             'title': 'Systems Engineer',
             'company': 'Xerox Corporation',
             'date': '2013 - 2016',
-            'description': 'At Xerox I quickly rose to become the subject matter expert for a number of systems, including our VMware infrastructure (thousands of hosts across 6 datacenters and 3 continents), Commvault backup infrastructure, as well as an automated self-service tool I built that employees used to build sandbox environments and adjust the scale of production services.',
+            'description': 'At Xerox I quickly rose to become the subject matter expert for a number of systems, including our VMware infrastructure (thousands of hosts across 6 datacenters in the US, UK, and China), Commvault backup infrastructure, as well as an automated self-service tool I created that employees used to build sandbox environments and adjust the scale of production services. I also acted as a general systems engineering resource for both Windows and Linux server work.',
             'achievements': {
                 'Architected and implemented up all of the backup infrastructure required to support disaster recovery for all of Xerox\'s systems',
                 'Led VMware expansion to two new datacenters in China, including hardware purchasing, deployment, and configuration.',
-                'Built VM deployment process automation from the ground up with VMware Orchestrator.',
-                'Enhanced the system lifecycle process around all of our VMware infrastructure, especially around the quick and reliable deployment of system updates.'
+                'Created a VM deployment process automation from the ground up with VMware Orchestrator.',
+                'Enhanced the system lifecycle process around all of our VMware infrastructure. Everything from creation of new servers, patching existing ones, updating configurations, and server decommissioning was streamlined and automated in some way.'
             },
             'technologies': {
+                'Commvault Simpana',
+                'Linux'
+                'Powershell',
+                'SUSE Linux Enterprise Server',
                 'VMware',
                 'Windows Server',
-                'Linux (SLES)',
-                'Powershell'
             }
         },
         {
             'title': 'Information Systems Intern',
             'company': 'Saratoga Hospital',
             'date': '2013 - 2013',
-            'description': 'For my senior year of college, right before graduating, I took up an internship with one of the larger hospitals close to me. There, I learned about the interpersonal nature of IT, helping users and developers get what they need, more than I ever had in any of my college classes. I also started delving into automation, and found my love for reducing toil.',
+            'description': 'For my senior year of college, right before graduating, I took up an internship with one of the larger hospitals close to me. There I learned about the interpersonal nature of IT, helping users and developers get what they need, more than I ever had in any of my college classes. I also started delving into automation, and found my love for reducing toil.',
             'achievements': {
-                'Developed a fully featured PC deployment solution using the Microsoft Deployment Toolkit (MDT). Before my arrival PC deployments were all done manually, clicking through the installer. After deploying MDT new PC builds were as simple as starting a machine and selecting the PXE boot option.',
-                'Developed custom code for the ticket tracking system (Spiceworks), in order to add some custom fields and workflows that the base product didn\'t provide.'
+                'Created a fully featured PC deployment solution using the Microsoft Deployment Toolkit (MDT). Before my arrival PC deployments were all done manually, clicking through the installer. After deploying MDT new PC builds were as simple as starting a machine and selecting the PXE boot option.',
+                'Created custom code for the ticket tracking system (Spiceworks), in order to add some custom fields and workflows that the base product didn\'t provide.'
             },
             'technologies': {
-                'Windows Server',
                 'Javascript',
                 'Microsoft Deployment Toolkit'
+                'Windows Server',
             }
         },
         {
@@ -245,12 +253,12 @@ def get_resume():
             'date': '2009 - 2013',
             'description': 'While in college, I worked in my school\'s IT department. There, I worked alongside the more senior networking staff, and acted as a junior network engineer, making smaller scale cabling changes, adjusting VLANs and port statuses on switches, and just generally helping out around the shop.',
             'achievements': {
-                'Developed a PHP application called <a href="https://sourceforge.net/projects/netinv/">NETINV</a> to track the association between switches, patch panel ports, and wall ports in classrooms. Identifying where various switch ports went was a huge hassle at the time, and my contribution removed the painful process of having to manually trace out each network connection when making port changes.'
+                'Created a PHP application called <a href="https://sourceforge.net/projects/netinv/">NETINV</a> to track the association between switches, patch panel ports, and wall ports in classrooms. Identifying where various switch ports went was a huge hassle at the time, and my contribution removed the painful process of having to manually trace out each network connection when making port changes.'
             },
             'technologies': {
                 'Linux',
-                'PHP',
                 'Networking'
+                'PHP',
             }
         }
     ])
@@ -264,23 +272,23 @@ def get_resume():
         },
         'Technical': {
             'Ansible',
-            'Apache',
+            'Apache HTTPd',
             'Appdynamics',
             'Artifact Repositories',
             'Bash',
-            'Commvault',
+            'Commvault Simpana',
+            'HashiCorp Packer',
+            'HashiCorp Terraform',
             'Javascript',
             'Jenkins',
             'Kubernetes',
             'Linux',
             'Nginx',
-            'Packer',
             'Ping Federate (SAML/Oauth)',
             'Powershell',
             'Python',
-            'Terraform',
             'VMware',
-            'Windows'
+            'Windows Server'
         }
     })
 
@@ -296,13 +304,15 @@ def get_resume():
         'IIS',
         'Log Management',
         'Mulesoft',
+        'Nagios'
         'Networking',
         'Nginx',
         'Oauth',
         'Physical Server Administration (Blade/Rack)',
         'Rancher',
-        'RHEL',
+        'Red Hat Enterprise Linux (RHEL)',
         'SAN Management',
+        'Sonatype Nexus',
         'Source Control (Git)',
         'SSL/TLS Certificates & Ciphers',
         'Sumologic',
@@ -335,11 +345,10 @@ def get_resume():
 
     resume.set_interests({
         '3D Printing',
-        'Music',
         'Cars',
-        'Dogs',
         'Landscaping',
         'Mechanics',
+        'Music',
         'Robotics'
     })
 
