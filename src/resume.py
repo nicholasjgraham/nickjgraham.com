@@ -307,7 +307,7 @@ def get_resume():
         'Nagios'
         'Networking',
         'Nginx',
-        'Oauth',,
+        'Oauth',
         'Physical Server Administration (Blade/Rack)',
         'Rancher',
         'Red Hat Enterprise Linux (RHEL)',
