@@ -87,3 +87,7 @@ spec:
               number: 8080
         path: /
         pathType: Prefix
+  tls:
+    - hosts:
+      - nickjgraham-dev.nickwork.net
+      secretName: wildcard.nickwork.net
