@@ -97,8 +97,19 @@ spec:
               number: 8080
         path: /
         pathType: Prefix
+  - host: www.nickjgraham.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: nickjgrahamcom    
+            port:
+              number: 8080
+        path: /
+        pathType: Prefix
   tls:
   - hosts:
     - nickjgraham.nickwork.net
     - nickjgraham.com
+    - www.nickjgraham.com
     secretName: wildcard.nickwork.net
