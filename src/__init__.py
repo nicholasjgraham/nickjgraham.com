@@ -83,6 +83,24 @@ def root():
     return template_with_auto_links
 
 
+@app.route('/robots.txt')
+def robots_txt():
+    """
+    Serves a static robots.txt file for SEO
+
+    Args:
+        None
+
+    Returns:
+        robots.txt
+
+    Raises:
+        None
+    """
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'robots.txt', mimetype='text/plain')
+
+
 @app.route('/about')
 def about():
     """
