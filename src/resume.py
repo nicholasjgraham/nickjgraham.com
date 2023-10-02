@@ -225,11 +225,11 @@ def get_resume():
             },
             'technologies': {
                 'Commvault Simpana',
-                'Linux'
+                'Linux',
                 'Powershell',
                 'SUSE Linux Enterprise Server',
                 'VMware',
-                'Windows Server',
+                'Windows Server'
             }
         },
         {
@@ -243,8 +243,8 @@ def get_resume():
             },
             'technologies': {
                 'Javascript',
-                'Microsoft Deployment Toolkit'
-                'Windows Server',
+                'Microsoft Deployment Toolkit',
+                'Windows Server'
             }
         },
         {
@@ -257,8 +257,8 @@ def get_resume():
             },
             'technologies': {
                 'Linux',
-                'Networking'
-                'PHP',
+                'Networking',
+                'PHP'
             }
         }
     ])
