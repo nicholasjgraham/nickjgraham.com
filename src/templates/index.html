@@ -43,6 +43,13 @@
 	{% else %}
     <link id="theme-style" rel="stylesheet" href="{{ url_for('static', filename='css/pillar-1.css') }}">
 	{% endif %}
+
+	<!-- Custom CSS -->  
+	{% if working_dir %}
+	<link id="theme-style" rel="stylesheet" href="{{ working_dir }}/static/css/custom.css">
+	{% else %}
+    <link id="theme-style" rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+	{% endif %}
 	
 </head> 
 
