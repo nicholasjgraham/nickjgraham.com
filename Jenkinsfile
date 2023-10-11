@@ -32,7 +32,7 @@ pipeline {
         stage('Docker Run') {
             steps {
                 // Start up a container that we can use to run testing and validation commands
-                sh "docker run -d --rm --name nickjgrahamcom-build nicholasjgraham/nickjgraham.com:latest"
+                sh "docker run -d --name nickjgrahamcom-build nicholasjgraham/nickjgraham.com:latest"
             }
         }
         stage('Lint') {
@@ -74,8 +74,9 @@ pipeline {
             }
         }
         cleanup {
-            // Stop the test container after everything is done (it will delete itself automatically.)
+            // Stop the test container and delete it
             sh "docker stop nickjgrahamcom-build"
+            sh "docker rm nickjgrahamcom-build"
         }
     }
 }
