@@ -10521,7 +10521,7 @@ textarea.form-control-lg {
   }
 }
 
-/* @media print {
+@media print {
   .d-print-inline {
     display: inline !important;
   }
@@ -10552,7 +10552,7 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
-} */
+}
 
 /*************************** Pillar Styles ****************************/
 body {
