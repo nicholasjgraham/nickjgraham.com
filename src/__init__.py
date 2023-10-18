@@ -143,15 +143,14 @@ def pdf_gen():
 
     # Set the working_dir variable, which amounts to the path the script is running from
     working_dir = pathlib.Path(__file__).parent.resolve()
+    resume_obj = resume.get_resume()
     # Render the HTML template, including that working_dir value, which changes some variables to reference local files
-    resume_html = render_template('index.html', resume=resume.get_resume(), working_dir=str(working_dir), environ=os.environ, current_year=current_year)
-    # Output the generated HTML to stdout for debugging
-    logger.debug("PDF HTML: \n" + resume_html)
+    resume_html = render_template('index.html', resume=resume_obj, working_dir=str(working_dir), environ=os.environ, current_year=current_year)
     # Generate PDF
     try:
-        # Allow pdfkit to access local files
+        # Set pdfkit options
         pdf_options = {
-            'enable-local-file-access': None,
+            'enable-local-file-access': True,
             'javascript-delay': '1000',
             'page-width': '1100px',
             'page-height': '3400px'
@@ -162,6 +161,7 @@ def pdf_gen():
         response = make_response(pdf_data)
         # We're returning a PDF, so we need to set the MIME type appropriately
         response.headers['Content-Type'] = 'application/pdf'
+        response.headers['Content-Disposition'] = 'attachment; filename="' + resume_obj.name + ' Resume.pdf"'
     except Exception as e:
         # If something above has failed, log that error
         logger.error(e)
