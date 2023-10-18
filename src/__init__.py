@@ -152,7 +152,9 @@ def pdf_gen():
         # Allow pdfkit to access local files
         pdf_options = {
             'enable-local-file-access': None,
-            'javascript-delay': "1000"
+            'javascript-delay': '1000',
+            'page-width': '1100',
+            'page-height': '3400'
         }
         # Generate PDF file from HTML data
         pdf_data = pdfkit.from_string(resume_html, options=pdf_options)
