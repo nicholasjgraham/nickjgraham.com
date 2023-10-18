@@ -243,12 +243,12 @@
 	<!-- Pre-load script -->
 	<script>
 	$(window).on('load', function () {
-		for(var i=document.styleSheets[0].rules.length -1; i >0; i--){
+		<!-- for(var i=document.styleSheets[0].rules.length -1; i >0; i--){
 			if(document.styleSheets[0].rules[i].cssText.indexOf("@media print") !=-1 )
 			{
 			   document.styleSheets[0].deleteRule(i);
 			}
-		 }
+		 } -->
 		$('.lds-ellipsis').fadeOut(); // will first fade out the loading animation
 		$('.preloader').delay(333).fadeOut('slow'); // will fade out the white DIV that covers the website.
 		$('body').delay(333);
