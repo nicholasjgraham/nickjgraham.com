@@ -153,7 +153,7 @@ def pdf_gen():
             'enable-local-file-access': True,
             'javascript-delay': '1000',
             'page-width': '1000px',
-            'page-height': '3000px'
+            'page-height': '3000px',
         }
         # Generate PDF file from HTML data
         pdf_data = pdfkit.from_string(resume_html, options=pdf_options)
