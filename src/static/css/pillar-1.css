@@ -10630,6 +10630,9 @@ a.theme-btn-on-bg:hover, a.theme-btn-on-bg:focus, a.theme-btn-on-bg:active, .the
 .resume-header .picture {
   width: 220px;
 }
+.resume-header .picture-pdf {
+  width: 440px;
+}
 
 .resume-header .name {
   font-size: 2.25rem;
