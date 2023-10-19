@@ -81,7 +81,8 @@
 							    <h1 class="name mt-0 mb-1 text-white text-uppercase text-uppercase">{{ resume.name }}</h1>
 							    <div class="title mb-3">{{ resume.title }}</div>
 							    <ul class="list-unstyled">
-								    <li class="mb-2"><a class="text-link" href="mailto:{{ resume.email | safe }}"><i class="far fa-envelope fa-fw me-2" data-fa-transform="grow-3"></i>{{ resume.email | safe }}</a></li>
+								    <li class="mb-2"><a class="text-link" href="mailto:{{ resume.email | safe }}"><i class="far fa-envelope fa-fw me-2 fa-beat"></i>{{ resume.email | safe }}</a></li>
+									<li class="mb-3"><a class="text-link" href="{{ url_for('pdf_gen') }}"><span class="fa-container text-center me-2"><i class="fa-solid fa-file-pdf"></i></span></a></li>
 							    </ul>
 						    </div><!--//primary-info-->
 						    <div class="secondary-info col-auto mt-2">
