@@ -10781,7 +10781,7 @@ a.theme-btn-on-bg:hover, a.theme-btn-on-bg:focus, a.theme-btn-on-bg:active, .the
   color: #fb866a;
 }
 
-@media (max-width: 810px) {
+@media (max-width: 767.98px) {
   .resume-wrapper {
     padding-top: 0;
   }
