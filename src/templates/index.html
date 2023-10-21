@@ -82,14 +82,20 @@
 							    <div class="title mb-3">{{ resume.title }}</div>
 							    <ul class="list-unstyled">
 								    <li class="mb-2"><a class="text-link" href="mailto:{{ resume.email | safe }}"><i class="far fa-envelope fa-fw me-2 fa-beat"></i>{{ resume.email | safe }}</a></li>
+									{% if not working_dir %}
 									<li class="mb-3"><a class="text-link" href="{{ url_for('pdf_gen') }}"><span class="fa-container text-center me-2"><i class="fa-solid fa-file-pdf"></i></span></a></li>
+									{% endif %}
 							    </ul>
 						    </div><!--//primary-info-->
 						    <div class="secondary-info col-auto mt-2">
 							    <ul class="resume-social list-unstyled">
 					                <li class="mb-3"><a class="text-link" href="{{ resume.linkedin }}"><span class="fa-container text-center me-2"><i class="fab fa-linkedin-in fa-fw"></i></span>LinkedIn</a></li>
 					                <li class="mb-3"><a class="text-link" href="{{ resume.github }}"><span class="fa-container text-center me-2"><i class="fab fa-github-alt fa-fw"></i></span>GitHub</a></li>
+									{% if working_dir %}
+									<li class="mb-3"><a class="text-link" href="https://nickjgraham.com/about"><span class="fa-container text-center me-2"><i class="fa-solid fa-diagram-project"></i></span><u>Want to see how this site works?</u></a></li>
+									{% else %}
 									<li class="mb-3"><a class="text-link" href="{{ url_for('about') }}"><span class="fa-container text-center me-2"><i class="fa-solid fa-diagram-project"></i></span><u>Want to see how this site works?</u></a></li>
+									{% endif %}
 							    </ul>
 						    </div><!--//secondary-info-->
 					    </div><!--//row-->
