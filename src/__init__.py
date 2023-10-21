@@ -150,10 +150,11 @@ def pdf_gen():
     try:
         # Set pdfkit options
         pdf_options = {
-            'enable-local-file-access': True,
+            'enable-local-file-access': None,
+            'keep-relative-links': None,
             'javascript-delay': '1000',
             'page-width': '1000px',
-            'page-height': '2600px',
+            'page-height': '2700px',
             'margin-bottom': '0px',
             'margin-left': '0px',
             'margin-right': '0px',
