@@ -23,13 +23,10 @@
 	{% endif %}
 
 
-    <!-- FontAwesome CSS-->
-	{% if working_dir %}
-	<script defer src="{{ working_dir }}/static/fontawesome/css/all.min.css"></script>
-	{% else %}
-	<script defer src="{{ url_for('static', filename='fontawesome/css/all.min.css') }}"></script>
-	{% endif %}
-    
+    <!-- FontAwesome CSS And Bootstrap -->
+	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
     <!-- FontAwesome JS-->
 	{% if working_dir %}
 	<script defer src="{{ working_dir }}/static/fontawesome/js/all.min.js"></script>
