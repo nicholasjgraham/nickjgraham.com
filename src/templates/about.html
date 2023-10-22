@@ -117,8 +117,8 @@
           <div class="row">
             <div class="col-sm">
               <ul>
-                <li><a href="https://flask.palletsprojects.com/en/2.2.x/">Flask</a> is at the top. Flask is a Python library that provides a very easy way to serve web content, and that's used for everything here.</li>
-                <li><a href="https://www.python.org/">Python</a> is my programming language of choice, and the language this site runs on. At the moment, version 3.10.</li>
+                <li><a href="https://flask.palletsprojects.com/en/3.0.x/">Flask</a> is at the top. Flask is a Python library that provides a very easy way to serve web content, and that's used for everything here.</li>
+                <li><a href="https://www.python.org/">Python</a> is my programming language of choice, and the language this site runs on. At the moment, version 3.12.</li>
                 <li><a href="https://kubernetes.io/">Kubernetes</a> is an <i>amazing</i> container orchestration engine. It provides all the components required to effortlessly deploy new versions of this site through code, as well as handle capacity and networking changes.</li>
                 <li><a href="https://www.docker.com/">Docker</a>, of course. All of the containers for Kubernetes run on Docker, so Docker has to be included in the list.</li>
                 <li><a href="https://ubuntu.com/">Ubuntu</a> is my operating system of choice for container workloads. Generally, I use RHEL/CentOS for traditional things, but container workloads specifically seem to run more reliability on Ubuntu.</li>
@@ -139,7 +139,7 @@
       ============================ -->
           <section id="python">
             <h2>Python</h2>
-            <p class="lead">Flask and Python power all of the logic for the site. Currently, it uses Flask 2.1.2 and Python 3.10. Waitress 2.1.2 is also in use as a WSGI server, to provide a more performant and secure web protocol layer than what Flask comes with.</p>
+            <p class="lead">Flask and Python power all of the logic for the site. Currently, it uses Flask 3.0.0 and Python 3.12. Waitress 2.1.2 is also in use as a WSGI server, to provide a more performant and secure web protocol layer than what Flask comes with.</p>
             <ul>
               <li>At the root level of the application, we have a few listeners set up.</li>
               <ul>
@@ -313,7 +313,7 @@
             </p>
             <p>To browse, visit <code>http://&lt;your docker host&gt;:8080</code>. Easy!</p>
             <h3>Python</h3>
-            <p>Running on Python requires a bit of extra setup. First, make sure you have Python 3.10.x installed. You can grab the Windows version of 3.10.7 <a href="https://www.python.org/ftp/python/3.10.7/python-3.10.7-amd64.exe">here</a>. For Linux, the process really depends on your distribution. There's probably something in your package manager you can use, or you can compile from source <a href="https://www.python.org/ftp/python/3.10.7/Python-3.10.7.tgz">here</a>.</p>
+            <p>Running on Python requires a bit of extra setup. First, make sure you have Python 3.10.x installed. You can grab the Windows version of 3.12.0 <a href="https://www.python.org/ftp/python/3.12.0/python-3.12.0-amd64.exe">here</a>. For Linux, the process really depends on your distribution. There's probably something in your package manager you can use, or you can compile from source <a href="https://www.python.org/ftp/python/3.12.0/Python-3.12.0.tgz">here</a>.</p>
             <p>Then, you'll need to make sure you have git installed. On Linux, you should install git using your package manager. On Windows, you can get an installer <a href="https://git-scm.com/download/win">here</a>.</p>
             <p>With those ready, you can run through the set up steps.</p>
             <ol>
