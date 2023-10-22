@@ -1,4 +1,4 @@
-FROM python:3.10
+FROM python:3.12
 # Set working directory to /usr/src/app
 WORKDIR /usr/src/app
 # Copy application files
