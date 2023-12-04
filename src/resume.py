@@ -188,11 +188,11 @@ def get_resume():
             ''',
             'achievements': [
                 'Architected and executed Single Sign-On (SSO) system expansion to AWS, creating a multi-region, highly available system with no downtime since its creation.',
-                'Fully automated deployment and configuration management of Mulesoft application server architecture using Ansible, including over 50 separate services across 4 SDLC environments.',
+                'Fully automated deployment and configuration management of Mulesoft application server architecture using Ansible, including over 80 separate services across 4 SDLC environments.',
                 'Led the containerization of legacy Tomcat services into fully automated, reliable solution on Kubernetes.',
                 'Created multiple CI/CD pipelines in Jenkins to turn complex processes like code builds, file deployments, or configuration changes into scheduled, or one-click operations.',
                 'Organized and streamlined Ansible playbook usage, including the development of easy-to-use environment build scripts, and personal training/mentoring for other engineers.',
-                'Created a custom internal site that integrates with our SSO system APIs in order to provide users across the company with a central place to find SSO links, rather than relying on links maintained in wikis or emails.'
+                'Created a custom internal site with Python that integrates with our SSO system APIs in order to provide users across the company with a central place to find SSO links, rather than relying on links maintained in wikis or emails.'
             ],
             'technologies': {
                 'Ansible',
