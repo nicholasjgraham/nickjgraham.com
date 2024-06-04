@@ -277,6 +277,7 @@ def get_resume():
             'Artifact Repositories',
             'Bash',
             'Commvault Simpana',
+            'Docker',
             'HashiCorp Packer',
             'HashiCorp Terraform',
             'Javascript',
@@ -304,7 +305,7 @@ def get_resume():
         'IIS',
         'Log Management',
         'Mulesoft',
-        'Nagios'
+        'Nagios',
         'Networking',
         'Nginx',
         'Oauth',
