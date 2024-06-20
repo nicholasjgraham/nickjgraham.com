@@ -65,7 +65,7 @@ then
     pip install --upgrade pip wheel
     echo "Installing packages..."
     pip install -r src/requirements.txt
-    echo "Ansible environment is now configured and activated. To activate it in the future, run 'source activate' inside the same directory as this script."
+    echo "Python environment is now configured and activated. To activate it in the future, run 'source activate' inside the same directory as this script."
     echo "To deactivate the python environment, run 'deactivate'."
 else 
     echo "Quitting."
