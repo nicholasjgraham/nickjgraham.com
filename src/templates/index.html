@@ -87,7 +87,7 @@
 									{% if working_dir%}
 									<li class="mb-3"><a class="text-link" href="{{ resume.website }}"><span class="fa-container text-center me-2">View a better version of my resume on the web at <u>{{ resume.website.split('//')[1] }}</u></i></span></a></li>
 									{% else %}
-									<li class="mb-3"><a class="text-link" href="{{ url_for('pdf_gen') }}"><span class="fa-container text-center me-2"><i class="fa-solid fa-file-pdf"></i></span></a></li>
+									<li class="mb-3"><a class="text-link" href="{{ url_for('pdf_gen') }}"><span class="fa-container text-center me-2"><i class="fa-solid fa-file-pdf"></i></span>Click here for a PDF version!</a></li>
 									{% endif %}
 							    </ul>
 						    </div><!--//primary-info-->
