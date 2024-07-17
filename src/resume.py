@@ -296,6 +296,7 @@ def get_resume():
     resume.set_other_skills({
         'Active Directory',
         'Amazon Web Services',
+        'Artificial Intelligence (AI)',
         'Change Management',
         'Configuration Management',
         'Databases (MSSQL, MySQL)',
@@ -303,6 +304,7 @@ def get_resume():
         'Documentation',
         'ELK (Elasticsearch, Logstash, Kibana)',
         'IIS',
+        'Large Language Models (LLMs)',
         'Log Management',
         'Mulesoft',
         'Nagios',
