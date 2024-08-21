@@ -18,7 +18,7 @@ def auto_link(data: str, link_list: dict) -> str:
     # Iterate through our dict object
     for key, value in link_list.items():
         # Replace the first instance of the dict key with the replacement value
-        data = data.replace(f" {key} ", f"<a href=\"{value}\">{key}</a>", 1)
-        data = data.replace(f" {key},", f"<a href=\"{value}\">{key}</a>", 1)
+        data = data.replace(f" {key} ", f" <a href=\"{value}\">{key}</a> ", 1)
+        data = data.replace(f" {key},", f" <a href=\"{value}\">{key}</a>,", 1)
     # Return the updated data
     return data
