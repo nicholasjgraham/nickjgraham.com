@@ -185,13 +185,11 @@ def get_resume():
             'title': 'Principal Infrastructure Engineer',
             'company': 'Capital District Physician\'s Health Plan',
             'date': '2016 - Present',
-            'description': '''Currently I work as a Linux engineering team leader. My primary duties include serving as subject matter expert for Linux and its related technology stack, creating architecture solutions, seeing technology projects through to completion, as well as implementing automation processes to reduce toil and solve business problems all while serving as a point of leadership for decision making and responsibility for my team members.
+            'description': '''As a leader on the Linux engineering team I serve as the subject matter expert for Linux and its related technology stack. My responsibilities include creating architecture solutions, overseeing technology projects to completion, and implementing automation processes that reduce toil and solve business problems. I provide leadership in decision-making and hold responsibility for my team members.
 
-            I am also responsible for monitoring and incident management, ensuring high availability and system uptime.
+            In addition to these duties, I manage monitoring and incident response, ensuring high availability and system uptime. I also act as a liaison between the development and infrastructure teams, facilitating seamless collaboration and ensuring that developers have the tools and support they need to efficiently write and deploy code.
 
-            I also work as a liaison between the development and infrastructure teams; ensuring that our developers have the tools and support they need to write code and push changes as quickly and effectively as possible.
-
-            I primarily operate in a Linux environment on AWS and VMware, using tools like Kubernetes, Git, Ansible, Jenkins, and Python to build (and maintain) application server systems and pipelines to serve developers and business units.
+            I primarily operate in a Linux environment on AWS and VMware, utilizing tools such as Kubernetes, Git, Ansible, Jenkins, and Python to build and maintain application server systems and pipelines that serve developers and business units.
             ''',
             'achievements': [
                 'Architected and executed Single Sign-On (SSO) system expansion to AWS, creating a multi-region, highly available system with no downtime since its creation.',
