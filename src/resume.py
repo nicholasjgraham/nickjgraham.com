@@ -18,7 +18,10 @@ link_list = {
     "VMware Orchestrator": "https://www.vmware.com/products/vrealize-orchestrator.html",
     "Microsoft Deployment Toolkit": "https://learn.microsoft.com/en-us/mem/configmgr/mdt/",
     "Spiceworks": "https://www.spiceworks.com/free-help-desk-software/self-hosted/",
-    "CI/CD": "https://www.redhat.com/en/topics/devops/what-is-ci-cd"
+    "CI/CD": "https://www.redhat.com/en/topics/devops/what-is-ci-cd",
+    "Python": "https://www.python.org/",
+    "Git": "https://git-scm.com/",
+    "AWS": "https://aws.amazon.com/",
 }
 
 # Define the "Resume" class, which will include all of the different components we want to inject into the HTML template
