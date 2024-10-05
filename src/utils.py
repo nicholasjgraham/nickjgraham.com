@@ -1,3 +1,4 @@
+import pdfkit
 # This file contains utility functions that can be used elsewhere in the app.
 
 def auto_link(data: str, link_list: dict) -> str:
@@ -24,3 +25,31 @@ def auto_link(data: str, link_list: dict) -> str:
         data = data.replace(f" {key}.", f" <a href=\"{value}\">{key}</a>.", 1)
     # Return the updated data
     return data
+
+
+def generate_pdf(html) -> bytes:
+    """
+    Generates a PDF from HTML data.
+
+    Args:
+        html - A string of HTML data to be converted to PDF.
+
+    Returns:
+        A PDF file.
+
+    """
+    # Set pdfkit options
+    pdf_options = {
+        'enable-local-file-access': None,
+        'keep-relative-links': None,
+        'javascript-delay': '1000',
+        'page-width': '1000px',
+        'page-height': '2700px',
+        'margin-bottom': '0px',
+        'margin-left': '0px',
+        'margin-right': '0px',
+        'margin-top': '0px',
+    }
+    # Generate PDF file from HTML data
+    pdf_data = pdfkit.from_string(html, options=pdf_options)
+    return pdf_data

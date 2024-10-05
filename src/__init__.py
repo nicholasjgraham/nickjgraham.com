@@ -4,7 +4,6 @@ import pathlib
 import sys
 from datetime import datetime
 
-import pdfkit
 from flask import (Flask, make_response, render_template, request,
                    send_from_directory)
 
@@ -148,20 +147,8 @@ def pdf_gen():
     resume_html = render_template('index.html', resume=resume_obj, working_dir=str(working_dir), environ=os.environ, current_year=current_year)
     # Generate PDF
     try:
-        # Set pdfkit options
-        pdf_options = {
-            'enable-local-file-access': None,
-            'keep-relative-links': None,
-            'javascript-delay': '1000',
-            'page-width': '1000px',
-            'page-height': '2700px',
-            'margin-bottom': '0px',
-            'margin-left': '0px',
-            'margin-right': '0px',
-            'margin-top': '0px',
-        }
         # Generate PDF file from HTML data
-        pdf_data = pdfkit.from_string(resume_html, options=pdf_options)
+        pdf_data = utils.generate_pdf(resume_html)
         # Build a response for Flask to reply with
         response = make_response(pdf_data)
         # We're returning a PDF, so we need to set the MIME type appropriately
