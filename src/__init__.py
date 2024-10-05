@@ -123,13 +123,6 @@ def pdf_gen():
     """
     An endpoint that returns a download of the resume site in PDF format.
 
-    Originally, I intended to have a link on the main resume page that returns a copy of the resume
-    in PDF form, but unfortunately the rendering from pdfkit/wkhtmltopdf just doesn't look right, and
-    it seems to be a limitation of those libraries. So, there's no link on the resume page for that anymore.
-    However, /pdf will remain available as-is, just to show the extent that I've managed to get that to work.
-    If you're curious and looking at this source, feel free to hit that endpoint. If you actually want a PDF
-    copy, just save as PDF from your browser :)
-
     Args:
         None
 
