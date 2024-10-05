@@ -1,6 +1,7 @@
 import pdfkit
 # This file contains utility functions that can be used elsewhere in the app.
 
+
 def auto_link(data: str, link_list: dict) -> str:
     """
     This runs through a string and replaces the first instance of keys from a dict with values of those dicts.
