@@ -71,9 +71,9 @@ def generate_pdf(html) -> bytes:
     # Generate PDF file from HTML data
     working_dir = pathlib.Path(__file__).parent.resolve()
     html = weasyprint.HTML(string=html)
-    css_roboto = weasyprint.CSS(open(f'{working_dir}/src/static/css/roboto.css'))
-    css_idocs = weasyprint.CSS(open(f'{working_dir}/src/static/css/idocs.stylesheet.css'))
-    css_pillar = weasyprint.CSS(open(f'{working_dir}/src/static/css/pillar-1.css'))
-    css_custom = weasyprint.CSS(open(f'{working_dir}/src/static/css/custom.css'))
+    css_roboto = weasyprint.CSS(open(f'{working_dir}/static/css/roboto.css'))
+    css_idocs = weasyprint.CSS(open(f'{working_dir}/static/css/idocs.stylesheet.css'))
+    css_pillar = weasyprint.CSS(open(f'{working_dir}/static/css/pillar-1.css'))
+    css_custom = weasyprint.CSS(open(f'{working_dir}/static/css/custom.css'))
     pdf_data = html.write_pdf(stylesheets=[css_roboto, css_idocs, css_pillar, css_custom])
     return pdf_data
