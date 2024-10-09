@@ -13,6 +13,9 @@ RUN pip install --upgrade pip
 ADD src /usr/src/app
 # Run pip to install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
+# Install playwright browser
+RUN playwright install
+RUN playwright install-deps
 # Open port 8080 to receive traffic
 EXPOSE 8080
 # Set the VERSION variable to the build number, which is passed in via the docker build --build-arg argument
