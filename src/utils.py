@@ -1,5 +1,8 @@
-import weasyprint
-import pathlib
+import base64
+
+import requests
+from playwright.sync_api import Playwright, sync_playwright
+
 # This file contains utility functions that can be used elsewhere in the app.
 
 
@@ -29,34 +32,6 @@ def auto_link(data: str, link_list: dict) -> str:
     return data
 
 
-# def generate_pdf(html) -> bytes:
-#     """
-#     Generates a PDF from HTML data.
-
-#     Args:
-#         html - A string of HTML data to be converted to PDF.
-
-#     Returns:
-#         A PDF file.
-
-#     """
-#     # Set pdfkit options
-#     pdf_options = {
-#         'enable-local-file-access': None,
-#         'keep-relative-links': None,
-#         'javascript-delay': '1000',
-#         'page-width': '1000px',
-#         'page-height': '2700px',
-#         'margin-bottom': '0px',
-#         'margin-left': '0px',
-#         'margin-right': '0px',
-#         'margin-top': '0px',
-#     }
-#     # Generate PDF file from HTML data
-#     pdf_data = pdfkit.from_string(html, options=pdf_options)
-#     return pdf_data
-
-
 def generate_pdf(html) -> bytes:
     """
     Generates a PDF from HTML data.
@@ -69,11 +44,64 @@ def generate_pdf(html) -> bytes:
 
     """
     # Generate PDF file from HTML data
-    working_dir = pathlib.Path(__file__).parent.resolve()
-    html = weasyprint.HTML(string=html)
-    css_roboto = weasyprint.CSS(open(f'{working_dir}/static/css/roboto.css'))
-    css_idocs = weasyprint.CSS(open(f'{working_dir}/static/css/idocs.stylesheet.css'))
-    css_pillar = weasyprint.CSS(open(f'{working_dir}/static/css/pillar-1.css'))
-    css_custom = weasyprint.CSS(open(f'{working_dir}/static/css/custom.css'))
-    pdf_data = html.write_pdf(stylesheets=[css_roboto, css_idocs, css_pillar, css_custom])
+    with sync_playwright() as playwright:
+        chromium = playwright.chromium
+        browser = chromium.launch()
+        page = browser.new_page()
+        page.set_content(html)
+        page.wait_for_load_state()
+        pdf_data = page.pdf(scale=0.85, width='1300px', height='3000px', print_background=True)
+        browser.close()
+
     return pdf_data
+
+
+def load_file(file_path: str) -> str:
+    """
+    Loads a file from disk or the web and returns the contents as a string.
+
+    Args:
+        file_path - A string representing the path to the file to be loaded. This can be a local file path or a URL.
+
+    Returns:
+        A string containing the contents of the file.
+
+    Raises:
+        FileNotFoundError if the local file is not found.
+        requests.exceptions.RequestException if there is an issue with the web request.
+    """
+    # If the file path starts with http, we assume it's a URL
+    if file_path.startswith('http'):
+        # Load the file from the web
+        data = requests.get(file_path).text
+        return data
+    else:
+        # Open the file and read the contents
+        with open(file_path, 'r') as file:
+            data = file.read()
+        # Close the file
+        file.close()
+        # Return the data
+        return data
+
+
+def image_base64(file_path: str) -> str:
+    """
+    Loads an image from disk and returns the base64 encoded string.
+
+    Args:
+        file_path - A string representing the path to the file to be loaded.
+
+    Returns:
+        A string containing the base64 encoded image.
+
+    Raises:
+        FileNotFoundError if the file is not found.
+    """
+    # Open the file and read the contents
+    with open(file_path, 'rb') as file:
+        data = file.read()
+    # Close the file
+    file.close()
+    # Return the data
+    return base64.b64encode(data).decode('utf-8')
