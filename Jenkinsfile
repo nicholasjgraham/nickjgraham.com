@@ -33,6 +33,8 @@ pipeline {
             steps {
                 // Start up a container that we can use to run testing and validation commands
                 sh "docker run -d --name nickjgrahamcom-build nicholasjgraham/nickjgraham.com:latest"
+                // Wait a few seconds for the container to start up
+                sleep 5
             }
         }
         stage('Lint') {

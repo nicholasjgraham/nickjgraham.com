@@ -17,38 +17,54 @@
 	{% endif %}
     <!-- Google Font -->
 	{% if working_dir %}
-	<link href="{{ working_dir }}/static/css/roboto.css" rel="stylesheet">
+	<style>
+		{{ load_file(working_dir + '/static/css/roboto.css')|safe }}
+	</style>
     {% else %}
 	<link href="{{ url_for('static', filename='css/roboto.css') }}" rel="stylesheet">
 	{% endif %}
 
     <!-- FontAwesome CSS -->
+	{% if working_dir %}
+	<style>
+		{{ load_file('https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css')|safe }}
+	</style>
+	{% else %}
 	<link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+	{% endif %}
 
     <!-- FontAwesome JS-->
 	{% if working_dir %}
-	<script defer src="{{ working_dir }}/static/fontawesome/js/all.min.js"></script>
+	<script type="text/javascript">
+		{{ load_file(working_dir + '/static/fontawesome/js/all.js')|safe  }}
+	</script>
 	{% else %}
 	<script defer src="{{ url_for('static', filename='fontawesome/js/all.min.js') }}"></script>
 	{% endif %}
 
 	<!-- iDocs CSS -->  
 	{% if working_dir %}
-	<link rel="stylesheet" type="text/css" href="{{ working_dir }}/static/css/idocs.stylesheet.css">
+	<style type="text/css">
+		{{ load_file(working_dir + '/static/css/idocs.stylesheet.css')|safe  }}
+	</style>
 	{% else %}
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/idocs.stylesheet.css') }}">
 	{% endif %}
 
 	<!-- Theme CSS -->  
 	{% if working_dir %}
-	<link id="theme-style" rel="stylesheet" href="{{ working_dir }}/static/css/pillar-1.css">
+	<style id="theme-style">
+		{{ load_file(working_dir + '/static/css/pillar-1.css')|safe  }}
+	</style>
 	{% else %}
     <link id="theme-style" rel="stylesheet" href="{{ url_for('static', filename='css/pillar-1.css') }}">
 	{% endif %}
 
 	<!-- Custom CSS -->  
 	{% if working_dir %}
-	<link id="theme-style" rel="stylesheet" href="{{ working_dir }}/static/css/custom.css">
+	<style id="theme-style">
+		{{ load_file(working_dir + '/static/css/custom.css')|safe  }}
+	</style>
 	{% else %}
     <link id="theme-style" rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
 	{% endif %}
@@ -57,6 +73,7 @@
 
 <body>
 	<!-- Preloader -->
+	{% if not working_dir %}
 	<div class="preloader">
 		<div class="lds-ellipsis">
 		<div></div>
@@ -65,6 +82,7 @@
 		<div></div>
 		</div>
 	</div>
+	{% endif %}
 	<!-- Preloader End --> 
     <article class="resume-wrapper text-center position-relative">
 	    <div class="resume-wrapper-inner mx-auto text-start bg-white shadow-lg">
@@ -72,7 +90,7 @@
 			    <div class="row">
 				    <div class="col-auto resume-picture-holder text-center text-md-start">
 						{% if working_dir %}
-						<img class="picture" src="{{ working_dir }}/static/images/portrait.png" alt="">
+						<img class="picture" src="data:image/png;base64,{{ image_base64(working_dir + '/static/images/portrait.png') }}" alt="">
 						{% else %}
 				        <img class="picture" src="{{ url_for('static', filename='images/portrait.png') }}" alt="">
 						{% endif %}
@@ -243,14 +261,16 @@
 
     </footer>
 	<!-- Jquery -->
-	
+
 	{% if working_dir %}
-	<script src="{{ working_dir }}/static/js/jquery.min.js"></script>
+	<script>
+		{{ load_file(working_dir + '/static/js/jquery.min.js')|safe }}
+	</script>
 	{% else %}
-	<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script> 
+	<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
 	{% endif %}
 	<!-- Pre-load script -->
-	<script>
+	<script type="text/javascript">
 	$(window).on('load', function () {
 		/* for(var i=document.styleSheets[0].rules.length -1; i >0; i--){
 			if(document.styleSheets[0].rules[i].cssText.indexOf("@media print") !=-1 )

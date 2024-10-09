@@ -4,7 +4,6 @@ import pathlib
 import sys
 from datetime import datetime
 
-import pdfkit
 from flask import (Flask, make_response, render_template, request,
                    send_from_directory)
 
@@ -43,6 +42,10 @@ current_year = datetime.today().year
 
 # Create a Flask object for the application
 app = Flask(__name__, static_folder='static')
+
+# Set up functions
+app.jinja_env.globals.update(load_file=utils.load_file)
+app.jinja_env.globals.update(image_base64=utils.image_base64)
 
 
 @app.route('/favicon.ico')
@@ -124,13 +127,6 @@ def pdf_gen():
     """
     An endpoint that returns a download of the resume site in PDF format.
 
-    Originally, I intended to have a link on the main resume page that returns a copy of the resume
-    in PDF form, but unfortunately the rendering from pdfkit/wkhtmltopdf just doesn't look right, and
-    it seems to be a limitation of those libraries. So, there's no link on the resume page for that anymore.
-    However, /pdf will remain available as-is, just to show the extent that I've managed to get that to work.
-    If you're curious and looking at this source, feel free to hit that endpoint. If you actually want a PDF
-    copy, just save as PDF from your browser :)
-
     Args:
         None
 
@@ -148,22 +144,11 @@ def pdf_gen():
     resume_html = render_template('index.html', resume=resume_obj, working_dir=str(working_dir), environ=os.environ, current_year=current_year)
     # Generate PDF
     try:
-        # Set pdfkit options
-        pdf_options = {
-            'enable-local-file-access': None,
-            'keep-relative-links': None,
-            'javascript-delay': '1000',
-            'page-width': '1000px',
-            'page-height': '2700px',
-            'margin-bottom': '0px',
-            'margin-left': '0px',
-            'margin-right': '0px',
-            'margin-top': '0px',
-        }
         # Generate PDF file from HTML data
-        pdf_data = pdfkit.from_string(resume_html, options=pdf_options)
+        pdf_data = utils.generate_pdf(resume_html)
         # Build a response for Flask to reply with
         response = make_response(pdf_data)
+        # return response
         # We're returning a PDF, so we need to set the MIME type appropriately
         response.headers['Content-Type'] = 'application/pdf'
         response.headers['Content-Disposition'] = 'attachment; filename="' + resume_obj.name + ' Resume.pdf"'
