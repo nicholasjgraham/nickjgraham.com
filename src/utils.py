@@ -1,7 +1,7 @@
 import base64
 
 import requests
-from playwright.sync_api import Playwright, sync_playwright
+from playwright.sync_api import sync_playwright
 
 # This file contains utility functions that can be used elsewhere in the app.
 
