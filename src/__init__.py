@@ -43,6 +43,10 @@ current_year = datetime.today().year
 # Create a Flask object for the application
 app = Flask(__name__, static_folder='static')
 
+# Set up functions
+app.jinja_env.globals.update(load_file=utils.load_file)
+app.jinja_env.globals.update(image_base64=utils.image_base64)
+
 
 @app.route('/favicon.ico')
 def favicon():
@@ -144,6 +148,7 @@ def pdf_gen():
         pdf_data = utils.generate_pdf(resume_html)
         # Build a response for Flask to reply with
         response = make_response(pdf_data)
+        # return response
         # We're returning a PDF, so we need to set the MIME type appropriately
         response.headers['Content-Type'] = 'application/pdf'
         response.headers['Content-Disposition'] = 'attachment; filename="' + resume_obj.name + ' Resume.pdf"'
