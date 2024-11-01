@@ -5,8 +5,6 @@ WORKDIR /usr/src/app
 RUN apt-get update
 # Update system packages
 RUN apt-get upgrade -y
-# Install wkhtmltopdf
-RUN apt-get install -y wkhtmltopdf
 # Upgrade pip
 RUN pip install --upgrade pip
 # Copy application files
