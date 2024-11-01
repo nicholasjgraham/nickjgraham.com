@@ -192,12 +192,13 @@ def get_resume():
             I primarily operate in a Linux environment on AWS and VMware, utilizing tools such as Kubernetes, Git, Ansible, Jenkins, and Python to build and maintain application server systems and pipelines that serve developers and business units.
             ''',
             'achievements': [
-                'Architected and executed Single Sign-On (SSO) system expansion to AWS, creating a multi-region, highly available system with no downtime since its creation.',
-                'Fully automated deployment and configuration management of Mulesoft application server architecture using Ansible, including over 80 separate services across 4 SDLC environments.',
-                'Led the containerization of legacy Tomcat services into fully automated, reliable solution on Kubernetes.',
-                'Created multiple CI/CD pipelines in Jenkins to turn complex processes like code builds, file deployments, or configuration changes into scheduled, or one-click operations.',
-                'Organized and streamlined Ansible playbook usage, including the development of easy-to-use environment build scripts, and personal training/mentoring for other engineers.',
-                'Created a custom internal site with Python that integrates with our SSO system APIs in order to provide users across the company with a central place to find SSO links, rather than relying on links maintained in wikis or emails.'
+                'Architected and executed Single Sign-On (SSO) system expansion to AWS, creating a multi-region, highly available system with no downtime since its creation. This greatly improved the reliability of our authentication system for both employees and customers.',
+                'Fully automated deployment and configuration management of Mulesoft application server architecture using Ansible, including over 80 individual services across 4 SDLC environments. This allowed for consistent, reliable, quick deployments of new services and updates.',
+                'Led the containerization of legacy Tomcat services into fully automated, reliable solution on Kubernetes. This enabled developers to deploy new services with minimal effort, and provided a consistent, reliable platform for those services to run on.',
+                'Created many CI/CD pipelines in Jenkins to turn complex processes like code builds, file deployments, or configuration changes into scheduled, or one-click operations. This greatly reduced the time and effort required to deploy changes, as well as reducing the chance for human error.',
+                'Automated the transition from CentOS to RHEL, and subsequent upgrades to RHEL 9. This reduced the amount of labor required to perform these upgrades by the whole engineering staff.'
+                'Organized and streamlined Ansible playbook usage, including the development of easy-to-use environment build scripts, and personal training/mentoring for other engineers. This enhanced the use of Ansible and improved automation capabilities for everyone\'s work across the team.',
+                'Created a custom internal site with Python that integrates with our SSO system APIs. This provides users across the company with a central place to find SSO links, rather than relying on links maintained in wikis or emails.'
             ],
             'technologies': {
                 'Ansible',
