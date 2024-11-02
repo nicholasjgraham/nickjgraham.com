@@ -10721,6 +10721,10 @@ a.theme-btn-on-bg:hover, a.theme-btn-on-bg:focus, a.theme-btn-on-bg:active, .the
   font-weight: 500;
 }
 
+.resume-picture-holder {
+  min-width: 150px;
+}
+
 .resume-position-time {
   font-size: 0.875rem;
   color: #aab4c3;

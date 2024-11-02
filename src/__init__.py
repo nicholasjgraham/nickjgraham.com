@@ -48,23 +48,23 @@ app.jinja_env.globals.update(load_file=utils.load_file)
 app.jinja_env.globals.update(image_base64=utils.image_base64)
 
 
-@app.route('/favicon.ico')
-def favicon():
-    """
-    Favicon endpoint, primarily meant for situations where the favicon isn't picked up from HTML properly
-    and the browser looks at /favicon.ico instead.
+# @app.route('/favicon.ico')
+# def favicon():
+#     """
+#     Favicon endpoint, primarily meant for situations where the favicon isn't picked up from HTML properly
+#     and the browser looks at /favicon.ico instead.
 
-    Args:
-        None
+#     Args:
+#         None
 
-    Returns:
-        The favicon image
+#     Returns:
+#         The favicon image
 
-    Raises:
-        None
-    """
-    return send_from_directory(os.path.join(app.root_path, 'static/images'),
-                               'favicon.ico', mimetype='image/x-icon')
+#     Raises:
+#         None
+#     """
+#     return send_from_directory(os.path.join(app.root_path, 'static/images'),
+#                                'favicon.ico', mimetype='image/x-icon')
 
 
 @app.route('/')

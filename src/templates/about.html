@@ -4,9 +4,9 @@
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
-<link href="{{ url_for('static', filename='images/favicon.ico') }}" rel="icon" />
+<!-- <link href="{{ url_for('static', filename='images/favicon.ico') }}" rel="icon" /> -->
 <title>{{ resume.name }} - {{ resume.title }} - About</title>
-<meta name="description" content="Your ThemeForest item Name and description">
+<meta name="description" content="{{ resume.name }}">
 <meta name="author" content="{{ resume.name }}">
 <meta name="robots" content="all">
 <!-- Documentation for the iDocs template can be found here: https://harnishdesign.net/demo/html/idocs/help/ -->
@@ -52,7 +52,7 @@
 		<button id="sidebarCollapse" class="navbar-toggler d-block d-md-none" type="button"><span></span><span class="w-75"></span><span class="w-50"></span></button>
 		
 		<!-- Logo --> 
-        <a class="logo ml-md-3" href="/" title="Nick Graham"> <img src="{{ url_for('static', filename='images/portrait_nobg.png') }}" alt="Nick Graham" width="90" height="90"/> </a> 
+        <!-- <a class="logo ml-md-3" href="/" title="Nick Graham"> <img src="{{ url_for('static', filename='images/portrait_nobg.png') }}" alt="Nick Graham" width="90" height="90"/> </a>  -->
     <!-- Logo End -->
         
 		<!-- Navbar Toggler -->
@@ -146,14 +146,14 @@
                 <li>
                   <strong><a href="/">/</a></strong> - The root page for the site. From here, Flask inserts some variables into a static HTML template, and serves that completed page to the browser. There's also a method in place, <code>utils.auto_link()</code>, that parses the generated HTML and creates hyperlinks based on the first occurrence of a list of keywords. This way, for example, people that may not be familiar with <a href="https://mulesoft.com">Mulesoft</a> can have a link to more information about it.
                 </li>
-                <li>
+                <!-- <li>
                   <strong><a href="/favicon.ico">/favicon.ico</a></strong> - A fix for browsers that don't follow favicon information in the HTML metadata, and instead look for the icon in the site root. This just takes the actual (handsome) favicon from disk, and returns it under this URL.
-                </li>
+                </li> -->
                 <li>
                   <strong><a href="/about">/about</a></strong> - This page, of course. Similarly to the root page, Flask just inserts some variables into a static template, and serves that page to the browser. There's no automatic link creation here, though, as that should all be intentional on this page.
                 </li>
                 <li>
-                  <strong><a href="/pdf">/pdf</a></strong> - An page that serves a nice PDF copy of my resume. Unfortunately, due to some limitations of the libraries available, it doesn't quite display perfectly. It does include a link to redirect viewers to the web version, though.
+                  <strong><a href="/pdf">/pdf</a></strong> - An page that serves a nice PDF copy of my resume for reliable downloading and printing. It also includes a link to redirect viewers to the web version.
                 </li>
                 <li>
                   <strong><a href="/ping">/ping</a></strong> - I like to include /ping endpoints in my applications. These provide an easy way to get the operational status of the underlying web services, before you start worrying about the actual functionality of those services. If we hit /ping, and get "pong" back, we know every bit of the architecture up to and including Flask itself is working as expected. Kubernetes also uses this to know of a container is done starting up.
