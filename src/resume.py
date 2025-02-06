@@ -21,7 +21,7 @@ link_list = {
     "CI/CD": "https://www.redhat.com/en/topics/devops/what-is-ci-cd",
     "Python": "https://www.python.org/",
     "Git": "https://git-scm.com/",
-    "AWS": "https://aws.amazon.com/",
+    "AWS": "https://aws.amazon.com/"
 }
 
 # Define the "Resume" class, which will include all of the different components we want to inject into the HTML template
@@ -33,7 +33,7 @@ class Resume:
         # Initially, we just set everything to placeholder values, and we'll create and use set methods to update those values later
         self.name = name
         self.title = title
-        self.email = f"{name}&commat;example&period;com"
+        self.email = f"{name}@example.com"
         self.linkedin = 'https://linkedin.com'
         self.github = 'https://github.com'
         self.website = 'https://example.com'
@@ -43,6 +43,7 @@ class Resume:
                 'title': 'First Job Title',
                 'company': 'First Company',
                 'date': '2020 - Present',
+                'location': 'City, ST',
                 'description': 'This is a lengthy description of your time at First Company.',
                 'achievements': [
                     'This is a compelling list of your achievements at First Company.',
@@ -79,6 +80,24 @@ class Resume:
                     'Also',
                     'Used'
                 }
+            }
+        ]
+        self.projects = [
+            {
+                'title': 'Project 1',
+                'url': 'project1.com',
+                'points': [
+                    'This is a point about Project 1.',
+                    'This is another point about Project 1.'
+                ]
+            },
+            {
+                'title': 'Project 2',
+                'url': 'project2.com',
+                'points': [
+                    'This is a point about Project 2.',
+                    'This is another point about Project 2.'
+                ]
             }
         ]
         self.main_skills = {
@@ -145,6 +164,9 @@ class Resume:
     def set_work_experience(self, work_experience):
         self.work_experience = work_experience
 
+    def set_projects(self, projects):
+        self.projects = projects
+
     def set_main_skills(self, main_skills):
         self.main_skills = main_skills
 
@@ -167,13 +189,13 @@ def get_resume():
 
     # Customize
 
-    resume.set_email('nick&commat;nickjgraham&period;com')
+    resume.set_email('nick@nickjgraham.com')
 
-    resume.set_linkedin('https://www.linkedin.com/in/ngraham2/')
+    resume.set_linkedin('linkedin.com/in/ngraham2/')
 
-    resume.set_github('https://github.com/nicholasjgraham')
+    resume.set_github('github.com/nicholasjgraham')
 
-    resume.set_website('https://nickjgraham.com')
+    resume.set_website('nickjgraham.com')
 
     resume.set_summary('''I'm Nick, an experienced systems engineer with a wide range of proficiencies ranging from simple Linux administration to complex automated application service deployments with Kubernetes.
 
@@ -185,6 +207,7 @@ def get_resume():
             'title': 'Principal Infrastructure Engineer',
             'company': 'Capital District Physician\'s Health Plan',
             'date': '2016 - Present',
+            'location': 'Albany, NY',
             'description': '''As a leader on the Linux engineering team I serve as the subject matter expert for Linux and its related technology stack. My responsibilities include creating architecture solutions, overseeing technology projects to completion, and implementing automation processes that reduce toil and solve business problems. I provide leadership in decision-making and hold responsibility for my team members.
 
             In addition to these duties, I manage monitoring and incident response, ensuring high availability and system uptime. I also act as a liaison between the development and infrastructure teams, facilitating seamless collaboration and ensuring that developers have the tools and support they need to efficiently write and deploy code.
@@ -222,6 +245,7 @@ def get_resume():
             'title': 'Systems Engineer',
             'company': 'Xerox Corporation',
             'date': '2013 - 2016',
+            'location': 'Albany, NY',
             'description': 'At Xerox I quickly rose to become the subject matter expert for a number of systems including our VMware infrastructure (thousands of hosts across 6 datacenters in the US, UK, and China), Commvault backup infrastructure, as well as an automated self-service tool I created that employees used to build sandbox environments and adjust the scale of production services. I also acted as a general systems engineering resource for both Windows and Linux server work.',
             'achievements': {
                 'Architected and implemented up all of the backup infrastructure required to support disaster recovery for all of Xerox\'s systems',
@@ -242,6 +266,7 @@ def get_resume():
             'title': 'Information Systems Intern',
             'company': 'Saratoga Hospital',
             'date': '2013 - 2013',
+            'location': 'Saratoga Springs, NY',
             'description': 'For my senior year of college, right before graduating, I took up an internship with one of the larger hospitals close to me. There I learned about the interpersonal nature of IT, helping users and developers get what they need, more than I ever had in any of my college classes. I also started delving into automation and found my love for reducing toil.',
             'achievements': {
                 'Created a fully featured PC deployment solution using the Microsoft Deployment Toolkit (MDT). Before my arrival PC deployments were all done manually, clicking through the installer. After deploying MDT new PC builds were as simple as starting a machine and selecting the PXE boot option.',
@@ -257,9 +282,10 @@ def get_resume():
             'title': 'IT Technician',
             'company': 'SUNY Canton',
             'date': '2009 - 2013',
+            'location': 'Canton, NY',
             'description': 'While in college I worked in my school\'s IT department. There I worked alongside the more senior networking staff and acted as a junior network engineer; making smaller scale cabling changes, adjusting VLANs and port statuses on switches, and just generally helping out around the shop.',
             'achievements': {
-                'Created a PHP application called <a href="https://sourceforge.net/projects/netinv/">NETINV</a> to track the association between switches, patch panel ports, and wall ports in classrooms. Identifying where various switch ports went was a huge hassle at the time, and my contribution removed the painful process of having to manually trace out each network connection when making port changes.'
+                'Created a PHP application to track the association between switches, patch panel ports, and wall ports in classrooms. Identifying where various switch ports went was a huge hassle at the time, and my contribution removed the painful process of having to manually trace out each network connection when making port changes.'
             },
             'technologies': {
                 'Linux',
@@ -269,34 +295,60 @@ def get_resume():
         }
     ])
 
-    resume.set_main_skills({
-        'Professional': {
-            'Effective Communication',
-            'Problem Solving',
-            'Project Management',
-            'Teamwork'
+    resume.set_projects([
+        {
+            'title': 'Resume Website',
+            'url': 'nickjgraham.com',
+            'points': [
+                'I created a website to host my resume in a more unique way than a simple PDF.',
+                'It\'s written in Python, runs on Kubernetes, and includes an about page with more information on how it works.'
+            ]
         },
-        'Technical': {
-            'Ansible',
+        {
+            'title': 'Home Lab',
+            'url': None,
+            'points': [
+                'I run a small server lab in my home, which allows me to test new technologies and stay current with skills that I may not use in my day-to-day work.',
+                'The lab consists of one physical server with around 60 virtual machines running a variety of Windows and Linux based services.'
+            ]
+        }
+    ]) 
+
+    resume.set_main_skills({
+        'Application Servers': [
             'Apache HTTPd',
-            'Appdynamics',
-            'Artifact Repositories',
-            'Bash',
-            'Commvault Simpana',
-            'Docker',
-            'HashiCorp Packer',
-            'HashiCorp Terraform',
-            'Javascript',
-            'Jenkins',
-            'Kubernetes',
-            'Linux',
+            'IIS',
             'Nginx',
             'Ping Federate (SAML/Oauth)',
-            'Powershell',
-            'Python',
-            'VMware',
+            'Tomcat'
+        ],
+        'Automation': [
+            'Ansible',
+            'Artifact Repositories',
+            'Jenkins',
+            'Packer',
+            'Terraform'
+        ],
+        'Containerization': [
+            'Docker',
+            'Kubernetes',
+            'Rancher'
+        ],
+        'Hypervisors': [
+            'Amazon Web Services',
+            'VMware'
+        ],
+        'Operating Systems': [
+            'Red Hat Linux',
+            'Ubuntu',
             'Windows Server'
-        }
+        ],
+        'Programming': [
+            'Bash',
+            'Javascript',
+            'Powershell',
+            'Python'
+        ]
     })
 
     resume.set_other_skills({
@@ -334,7 +386,7 @@ def get_resume():
 
     resume.set_education([
         {
-            'degree': 'Bachelor\'s, Information Technology',
+            'degree': 'BS, Information Technology',
             'name': 'SUNY Canton',
             'date': '2013'
         }
