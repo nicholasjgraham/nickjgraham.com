@@ -1,0 +1,83 @@
+\documentclass[11pt]{article}       % set main text size
+\usepackage[letterpaper,            % set paper size to letterpaper. change to a4paper for resumes outside of North America
+top=0.5in,                          % specify top page margin
+bottom=0.5in,                       % specify bottom page margin
+left=0.5in,                         % specify left page margin
+right=0.5in]{geometry}              % specify right page margin
+                       
+\usepackage{XCharter}               % set font
+\usepackage[T1]{fontenc}            % output encoding
+\usepackage[utf8]{inputenc}         % input encoding
+\usepackage{enumitem}               % enable lists for bullet points: itemize and \item
+\usepackage[hidelinks]{hyperref}    % format hyperlinks
+\usepackage{titlesec}               % enable section title customization
+\raggedright                        % disable text justification
+\pagestyle{empty}                   % disable page numbering
+
+% ensure PDF output will be all-Unicode and machine-readable
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+% format section headings: bolding, size, white space above and below
+\titleformat{\section}{\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule\vspace{-6.5pt}]
+
+% format bullet points: size, white space above and below, white space between bullets
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+\setlist[itemize]{itemsep=-2pt, leftmargin=12pt, topsep=6pt} %%% Test various topsep values to fix vertical spacing errors
+
+% resume starts here
+\begin{document}
+
+% name
+\centerline{\Huge {+ resume.name +}}
+
+\vspace{5pt}
+
+% contact information
+\centerline{\href{mailto:{+ resume.email +}}{{+ resume.email +}} | \href{https://{+ resume.website +}}{{+ resume.website  +}} | \href{https://{+ resume.linkedin +}}{{+ resume.linkedin +}}}
+
+\vspace{-10pt}
+
+% skills section
+\section*{Skills}
+{% for skill_section,skill_list in resume.main_skills.items() %}
+\textbf{{+skill_section+}:} {% for skill in skill_list %}{+ skill +}{% if not loop.last %}, {% endif %}{% endfor %} \\
+{% endfor %}
+
+\vspace{-6.5pt}
+
+% experience section
+\section*{Experience}
+{% for job in resume.work_experience %}
+\textbf{{+ job.title +},} {{+ job.company +}} -- {+ job.location +} \hfill {+ job.date +} \\
+\vspace{-9pt}
+\begin{itemize}
+  {% for achievement in job.achievements %}
+  \item {+ achievement +}
+  {% endfor %}
+\end{itemize}
+{% endfor %}
+
+\vspace{-18.5pt}
+
+% projects section
+\section*{Projects}
+{% for project in resume.projects %}
+\textbf{{+ project.title +}} \hfill {% if project.url is not none %}\href{https://{+ project.url +}}{{+ project.url +}}{% endif %} \\
+\vspace{-9pt}
+\begin{itemize}
+  {% for point in project.points %}
+  \item {+ point +}
+  {% endfor %}
+\end{itemize}
+{% endfor %}
+
+\vspace{-18.5pt}
+
+% education section
+\section*{Education}
+{% for school in resume.education %}
+\textbf{{+ school.name +}} -- {+ school.degree +} \hfill {+ school.date +} \\
+{% endfor %}
+
+\end{document}
