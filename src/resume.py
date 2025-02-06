@@ -312,7 +312,7 @@ def get_resume():
                 'The lab consists of one physical server with around 60 virtual machines running a variety of Windows and Linux based services.'
             ]
         }
-    ]) 
+    ])
 
     resume.set_main_skills({
         'Application Servers': [
