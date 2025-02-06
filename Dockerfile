@@ -7,6 +7,8 @@ RUN apt-get update
 RUN apt-get upgrade -y
 # Upgrade pip
 RUN pip install --upgrade pip
+# Install pdflatex packages
+RUN apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
 # Copy application files
 ADD src /usr/src/app
 # Run pip to install dependencies
