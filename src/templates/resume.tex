@@ -49,7 +49,7 @@ right=0.5in]{geometry}              % specify right page margin
 % experience section
 \section*{Experience}
 {% for job in resume.work_experience %}
-\textbf{{+ job.title +},} {{+ job.company +}} -- {+ job.location +} \hfill {+ job.date +} \\
+\textbf{{+ job.title +}} -- {{+ job.company +}} -- {+ job.location +} \hfill \textbf{+ job.date +} \\
 \vspace{-9pt}
 \begin{itemize}
   {% for achievement in job.achievements %}
@@ -77,7 +77,7 @@ right=0.5in]{geometry}              % specify right page margin
 % education section
 \section*{Education}
 {% for school in resume.education %}
-\textbf{{+ school.name +}} -- {+ school.degree +} \hfill {+ school.date +} \\
+\textbf{{+ school.name +}} -- {+ school.degree +} \hfill \textbf{+ school.date +} \\
 {% endfor %}
 
 \end{document}
