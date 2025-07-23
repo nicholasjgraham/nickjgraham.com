@@ -243,6 +243,16 @@ def get_resume():
             }
         },
         {
+            'title': 'Firefighter',
+            'company': 'Wilton Volunteer Fire Department',
+            'date': '2024 - Present',
+            'location': 'Wilton, NY',
+            'description': '''Back in 2024 I decided to volunteer some of my time and give back to my community by joining my local volunteer fire department.
+
+            I am currently an active firefighter and apparatus operator with the department, and spend some of my free time training, going on calls, and helping people in need.
+            '''
+        },
+        {
             'title': 'Systems Engineer',
             'company': 'Xerox Corporation',
             'date': '2013 - 2016',
