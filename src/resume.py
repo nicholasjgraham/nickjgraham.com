@@ -64,6 +64,7 @@ class Resume:
                 'title': 'Second Job Title',
                 'company': 'Second Company',
                 'date': '2016 - 2020',
+                'location': 'City, ST',
                 'description': 'This is a lengthy description of your time at Second Company.',
                 'achievements': [
                     'This is a compelling list of your achievements at Second Company.',
