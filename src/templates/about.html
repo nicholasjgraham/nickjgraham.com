@@ -304,7 +304,7 @@
       ============================ -->
           <section id="locally">
             <h2>Running Locally</h2>
-            <p class="lead">So, how do you run this site yourself? The answer to that depends on what you have available. You can either run it in a container, or directly on your system with Python.</p>
+            <p class="lead">So, how do you run this site yourself? The answer to that depends on what you have available. You can either run it in a container, or directly on a Linux system with Python.</p>
             <h3>Docker</h3>
             <p>Running with Docker is surprisingly straightforward.</p>
             <p>On your Docker host, run the following command:
@@ -313,8 +313,10 @@
             </p>
             <p>To browse, visit <code>http://&lt;your docker host&gt;:8080</code>. Easy!</p>
             <h3>Python</h3>
-            <p>Running on Python requires a bit of extra setup. First, make sure you have Python 3.10.x installed. You can grab the Windows version of 3.12.0 <a href="https://www.python.org/ftp/python/3.12.0/python-3.12.0-amd64.exe">here</a>. For Linux, the process really depends on your distribution. There's probably something in your package manager you can use, or you can compile from source <a href="https://www.python.org/ftp/python/3.12.0/Python-3.12.0.tgz">here</a>.</p>
-            <p>Then, you'll need to make sure you have git installed. On Linux, you should install git using your package manager. On Windows, you can get an installer <a href="https://git-scm.com/download/win">here</a>.</p>
+            <p>Running on Python requires a bit of extra setup. First, make sure you have Python 3.12.x installed. There's probably something in your package manager you can use, or you can compile from source <a href="https://www.python.org/ftp/python/3.12.0/Python-3.12.0.tgz">here</a>.</p>
+            <p>In order to run the <code>/tex</code> endpoint you'll need the <code>pdflatex</code> utility. On Ubuntu you can get this by running:</p>
+              <code>sudo apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra</code>
+            <p>Then, you'll need to make sure you have git installed. You should install git using your package manager.</p>
             <p>With those ready, you can run through the set up steps.</p>
             <ol>
               <li>Open a Bash or Powershell session and navigate to a free directory.</li>
