@@ -62,8 +62,8 @@ right=0.5in]{geometry}              % specify right page margin
     {% endfor %}
   \end{itemize}
 {% elif job.description is defined %}
-  \quad{{+ job.description +}}
-  \vspace{9pt}
+  \begin{quote}{{+ job.description +}}
+  \end{quote}
 {% endif %}
 {% endfor %}
 
