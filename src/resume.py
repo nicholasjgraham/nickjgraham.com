@@ -421,8 +421,7 @@ def get_resume():
         'Landscaping',
         'Mechanics',
         'Music',
-        'Robotics',
-        'Volunteer Firefighter'
+        'Robotics'
     })
 
     # Return the customized resume object
