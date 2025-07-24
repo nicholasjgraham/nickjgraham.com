@@ -53,7 +53,7 @@ def generate_pdf(html) -> bytes:
         page = browser.new_page()
         page.set_content(html)
         page.wait_for_load_state()
-        pdf_data = page.pdf(scale=0.85, width='1300px', height='3000px', print_background=True)
+        pdf_data = page.pdf(scale=0.85, width='1300px', height='3500px', print_background=True)
         browser.close()
 
     return pdf_data
