@@ -156,6 +156,9 @@
                   <strong><a href="/pdf">/pdf</a></strong> - An page that serves a nice PDF copy of my resume for reliable downloading and printing. It also includes a link to redirect viewers to the web version.
                 </li>
                 <li>
+                  <strong><a href="/pdf">/tex</a></strong> - Very similar to the /pdf endpoint, but this one uses <a href="https://www.latex-project.org/">LaTeX</a> to serve a version with minimal design elements that is better formatted for ingestion by HR systems. 
+                </li>
+                <li>
                   <strong><a href="/ping">/ping</a></strong> - I like to include /ping endpoints in my applications. These provide an easy way to get the operational status of the underlying web services, before you start worrying about the actual functionality of those services. If we hit /ping, and get "pong" back, we know every bit of the architecture up to and including Flask itself is working as expected. Kubernetes also uses this to know of a container is done starting up.
                 </li>
                 <li>
@@ -291,7 +294,7 @@
           <li>Jenkins builds a container locally and performs linting against the Python code inside that container using flake8.</li>
           <li>Jenkins builds the container again, and pushes it up to DockerHub with the appropriate tags (build #, and 'latest').</li>
           <li>If Kubernetes has been waiting from step 3, it will now deploy the applicable version of the image.</li>
-          <li>The change is now live, and all it took was a code change.</li>
+          <li>The change is now live, and all it took was a code push.</li>
         </ol>
         <div class="text-center">
           <img src="{{ url_for('static', filename='images/cicd_diagram.png') }}" class="img-fluid">
