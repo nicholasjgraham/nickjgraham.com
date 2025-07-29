@@ -83,24 +83,6 @@ class Resume:
                 }
             }
         ]
-        self.projects = [
-            {
-                'title': 'Project 1',
-                'url': 'project1.com',
-                'points': [
-                    'This is a point about Project 1.',
-                    'This is another point about Project 1.'
-                ]
-            },
-            {
-                'title': 'Project 2',
-                'url': 'project2.com',
-                'points': [
-                    'This is a point about Project 2.',
-                    'This is another point about Project 2.'
-                ]
-            }
-        ]
         self.main_skills = {
             'Skill Category 1': {
                 'Skill 1',
@@ -164,9 +146,6 @@ class Resume:
 
     def set_work_experience(self, work_experience):
         self.work_experience = work_experience
-
-    def set_projects(self, projects):
-        self.projects = projects
 
     def set_main_skills(self, main_skills):
         self.main_skills = main_skills
@@ -303,25 +282,6 @@ def get_resume():
                 'Networking',
                 'PHP'
             }
-        }
-    ])
-
-    resume.set_projects([
-        {
-            'title': 'Resume Website',
-            'url': 'nickjgraham.com',
-            'points': [
-                'I created a website to host my resume in a more unique way than a simple PDF.',
-                'It\'s written in Python, runs on Kubernetes, and includes an about page with more information on how it works.'
-            ]
-        },
-        {
-            'title': 'Home Lab',
-            'url': None,
-            'points': [
-                'I run a small server lab in my home, which allows me to test new technologies and stay current with skills that I may not use in my day-to-day work.',
-                'The lab consists of one physical server with around 60 virtual machines running a variety of Windows and Linux based services.'
-            ]
         }
     ])
 
