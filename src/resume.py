@@ -211,7 +211,7 @@ def get_resume():
             'location': 'Albany, NY',
             'description': '''As a leader on the Linux engineering team I serve as the subject matter expert for Linux and its related technology stack. My responsibilities include creating architecture solutions, overseeing technology projects to completion, and implementing automation processes that reduce toil and solve business problems. I provide leadership in decision-making and hold responsibility for my team members.
 
-            In addition to these duties, I manage monitoring and incident response, ensuring high availability and system uptime. I also act as a liaison between the development and infrastructure teams, facilitating seamless collaboration and ensuring that developers have the tools and support they need to efficiently write and deploy code.
+            In addition to these duties, I manage monitoring and incident response, ensuring high availability and system uptime. I also act as a liaison between the development and infrastructure teams, facilitating collaboration and ensuring that developers have the tools and support they need to efficiently write and deploy code.
 
             I primarily operate in a Linux environment on AWS and VMware, utilizing tools such as Kubernetes, Git, Ansible, Jenkins, and Python to build and maintain application server systems and pipelines that serve developers and business units.
             ''',
