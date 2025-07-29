@@ -53,6 +53,10 @@ right=0.5in]{geometry}              % specify right page margin
 {% for job in resume.work_experience %}
 \textbf{{+ job.title +}} -- {{+ job.company +}} -- {+ job.location +} \hfill \textbf{{+ job.date +}} \\
 
+{% if job.description is defined %}
+  \begin{quote}{{+ job.description +}}
+  \end{quote}
+{% endif %}
 
 {% if job.achievements is defined %}
 \vspace{-9pt}
@@ -61,27 +65,24 @@ right=0.5in]{geometry}              % specify right page margin
     \item {+ achievement +}
     {% endfor %}
   \end{itemize}
-{% elif job.description is defined %}
-  \begin{quote}{{+ job.description +}}
-  \end{quote}
 {% endif %}
 {% endfor %}
 
 \vspace{-18.5pt}
 
-% projects section
-\section*{Projects}
-{% for project in resume.projects %}
-\textbf{{+ project.title +}} \hfill {% if project.url is not none %}\href{https://{+ project.url +}}{{+ project.url +}}{% endif %} \\
-\vspace{-9pt}
-\begin{itemize}
-  {% for point in project.points %}
-  \item {+ point +}
-  {% endfor %}
-\end{itemize}
-{% endfor %}
+% % projects section
+% \section*{Projects}
+% {% for project in resume.projects %}
+% \textbf{{+ project.title +}} \hfill {% if project.url is not none %}\href{https://{+ project.url +}}{{+ project.url +}}{% endif %} \\
+% \vspace{-9pt}
+% \begin{itemize}
+%   {% for point in project.points %}
+%   \item {+ point +}
+%   {% endfor %}
+% \end{itemize}
+% {% endfor %}
 
-\vspace{-18.5pt}
+% \vspace{-18.5pt}
 
 % certification section
 \section*{Certifications}
