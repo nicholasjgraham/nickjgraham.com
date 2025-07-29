@@ -2,3 +2,5 @@ venv
 activate
 activate.fish
 __pycache__
+src/temp.tex
+src/temp.pdf

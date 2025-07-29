@@ -15,9 +15,9 @@ import utils
 # Get the log level from our environment variables, or set a default.
 
 if os.getenv('LOG_LEVEL') is not None:
-    level = logging.getLevelName(os.getenv('LOG_LEVEL'))
+    level = os.getenv('LOG_LEVEL')
 else:
-    level = logging.getLevelName('INFO')
+    level = 'DEBUG'
 
 # Declare our log format
 Log_Format = "%(levelname)s %(asctime)s - %(message)s"
@@ -161,6 +161,48 @@ def pdf_gen():
         response.status_code = 500
         # Return the error response to Flask
         return response
+    # Return the PDF download
+    return response
+
+
+@app.route('/tex')
+def tex_gen():
+    """
+    An endpoint that passes the resume content through a LaTeX template and returns a download of that in PDF format.
+
+    Args:
+        None
+
+    Returns:
+        A PDF file download.
+
+    Raises:
+        500 error code in the event the PDF build process fails.
+    """
+    # Get the resume object first
+    resume_obj = resume.get_resume()
+    try:
+        # Generate PDF file from HTML data
+        pdf_data = utils.generate_latex_pdf("resume.tex", {"resume": resume_obj})
+        # Build a response for Flask to reply with
+        response = make_response(pdf_data)
+        # return response
+        # We're returning a PDF, so we need to set the MIME type appropriately
+        response.headers['Content-Type'] = 'application/pdf'
+        response.headers['Content-Disposition'] = 'attachment; filename="' + resume_obj.name + ' Resume.pdf"'
+    except Exception as e:
+        # If LOG_LEVEL is debug, just pass the exception up
+        if logger.getEffectiveLevel() == logging.DEBUG:
+            raise e
+        else:
+            # If something above has failed, log that error
+            logger.error(e)
+            # Create a new response with a simple error message
+            response = make_response("Error generating PDF")
+            # Set the HTTP response code to 500
+            response.status_code = 500
+            # Return the error response to Flask
+            return response
     # Return the PDF download
     return response
 
