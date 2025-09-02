@@ -128,6 +128,28 @@ class Resume:
             'Interest 1',
             'Interest 2'
         }
+        self.volunteer = [
+            {
+                'title': 'Volunteer Position Title',
+                'company': 'Volunteer Company Or Organization',
+                'date': '2024 - Present',
+                'location': 'City, ST',
+                'achievements': [
+                    'This is a compelling list of your achievements at First Company.',
+                    'You should include multiple of them.',
+                    'Unless you only did one thing.',
+                    'But that would be strange.'
+                ],
+                'technologies': [
+                    'These',
+                    'Are',
+                    'The',
+                    'Technologies',
+                    'You',
+                    'Use'
+                ]
+            }
+        ]
 
     def set_email(self, email):
         self.email = email
@@ -162,6 +184,9 @@ class Resume:
     def set_interests(self, interests):
         self.interests = interests
 
+    def set_volunteer(self, volunteer):
+        self.volunteer = volunteer
+
 
 def get_resume():
     # Create a default resume object
@@ -188,12 +213,6 @@ def get_resume():
             'company': 'Capital District Physician\'s Health Plan',
             'date': '2016 - Present',
             'location': 'Albany, NY',
-            'description': '''As a leader on the Linux engineering team I serve as the subject matter expert for Linux and its related technology stack. My responsibilities include creating architecture solutions, overseeing technology projects to completion, and implementing automation processes that reduce toil and solve business problems. I provide leadership in decision-making and hold responsibility for my team members.
-
-            In addition to these duties, I manage monitoring and incident response, ensuring high availability and system uptime. I also act as a liaison between the development and infrastructure teams, facilitating collaboration and ensuring that developers have the tools and support they need to efficiently write and deploy code.
-
-            I primarily operate in a Linux environment on AWS and VMware, utilizing tools such as Kubernetes, Git, Ansible, Jenkins, and Python to build and maintain application server systems and pipelines that serve developers and business units.
-            ''',
             'achievements': [
                 'Architected and executed Single Sign-On (SSO) system expansion to AWS, creating a multi-region, highly available system with no downtime since its creation. This greatly improved the reliability of our authentication system for both employees and customers.',
                 'Fully automated deployment and configuration management of Mulesoft application server architecture using Ansible, including over 80 individual services across 4 SDLC environments. This allowed for consistent, reliable, quick deployments of new services and updates.',
@@ -210,7 +229,6 @@ def get_resume():
                 'Linux',
                 'Mulesoft',
                 'Nginx',
-                'OpenTelemetry',
                 'Packer',
                 'Ping Federate',
                 'Python',
@@ -222,21 +240,10 @@ def get_resume():
             }
         },
         {
-            'title': 'Firefighter',
-            'company': 'Wilton Volunteer Fire Department',
-            'date': '2024 - Present',
-            'location': 'Wilton, NY',
-            'description': '''Back in 2024 I decided to volunteer some of my time and give back to my community by joining my local volunteer fire department.
-
-            I am currently an active firefighter and apparatus operator with the department, and spend much of my free time training, going on calls, and helping people in need.
-            '''
-        },
-        {
             'title': 'Systems Engineer',
             'company': 'Xerox Corporation',
             'date': '2013 - 2016',
             'location': 'Albany, NY',
-            'description': 'At Xerox I quickly rose to become the subject matter expert for a number of systems including our VMware infrastructure (thousands of hosts across 6 datacenters in the US, UK, and China), Commvault backup infrastructure, as well as an automated self-service tool I created that employees used to build sandbox environments and adjust the scale of production services. I also acted as a general systems engineering resource for both Windows and Linux server work.',
             'achievements': {
                 'Architected and implemented up all of the backup infrastructure required to support disaster recovery for all of Xerox\'s systems',
                 'Led VMware expansion to two new datacenters in China, including hardware purchasing, deployment, and configuration.',
@@ -250,37 +257,6 @@ def get_resume():
                 'SUSE Linux Enterprise Server',
                 'VMware',
                 'Windows Server'
-            }
-        },
-        {
-            'title': 'Information Systems Intern',
-            'company': 'Saratoga Hospital',
-            'date': '2013 - 2013',
-            'location': 'Saratoga Springs, NY',
-            'description': 'For my senior year of college, right before graduating, I took up an internship with one of the larger hospitals close to me. There I learned about the interpersonal nature of IT, helping users and developers get what they need, more than I ever had in any of my college classes. I also started delving into automation and found my love for reducing toil.',
-            'achievements': {
-                'Created a fully featured PC deployment solution using the Microsoft Deployment Toolkit (MDT). Before my arrival PC deployments were all done manually, clicking through the installer. After deploying MDT new PC builds were as simple as starting a machine and selecting the PXE boot option.',
-                'Created custom code for the ticket tracking system (Spiceworks), in order to add some custom fields and workflows that the base product didn\'t provide.'
-            },
-            'technologies': {
-                'Javascript',
-                'Microsoft Deployment Toolkit',
-                'Windows Server'
-            }
-        },
-        {
-            'title': 'IT Technician',
-            'company': 'SUNY Canton',
-            'date': '2009 - 2013',
-            'location': 'Canton, NY',
-            'description': 'While in college I worked in my school\'s IT department. There I worked alongside the more senior networking staff and acted as a junior network engineer; making smaller scale cabling changes, adjusting VLANs and port statuses on switches, and just generally helping out around the shop.',
-            'achievements': {
-                'Created a PHP application to track the association between switches, patch panel ports, and wall ports in classrooms. Identifying where various switch ports went was a huge hassle at the time, and my contribution removed the painful process of having to manually trace out each network connection when making port changes.'
-            },
-            'technologies': {
-                'Linux',
-                'Networking',
-                'PHP'
             }
         }
     ])
@@ -324,7 +300,6 @@ def get_resume():
 
     resume.set_other_skills({
         'Active Directory',
-        'Amazon Web Services',
         'Artificial Intelligence (AI)',
         'Change Management',
         'Configuration Management',
@@ -333,7 +308,6 @@ def get_resume():
         'Documentation',
         'ELK (Elasticsearch, Logstash, Kibana)',
         'IIS',
-        'Large Language Models (LLMs)',
         'Log Management',
         'Mulesoft',
         'Nagios',
@@ -346,12 +320,7 @@ def get_resume():
         'SAN Management',
         'Sonatype Nexus',
         'Source Control (Git)',
-        'SSL/TLS Certificates & Ciphers',
-        'Sumologic',
-        'System Integration',
-        'Ubuntu',
-        'VMware Horizon',
-        'VMware PowerCLI'
+        'SSL/TLS Certificates & Ciphers'
 
     })
 
@@ -383,6 +352,15 @@ def get_resume():
         'Music',
         'Robotics'
     })
+
+    resume.set_volunteer([
+        {
+            'title': 'Firefighter / Apparatus Operator',
+            'company': 'Wilton Volunteer Fire Department',
+            'date': '2024 - Present',
+            'location': 'Wilton, NY'
+        }
+    ])
 
     # Return the customized resume object
     return resume
