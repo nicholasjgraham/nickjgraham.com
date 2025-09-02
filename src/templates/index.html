@@ -148,7 +148,6 @@
 										    <div class="resume-position-time">{{ job['date'] }}</div>
 									    </div><!--//resume-timeline-item-header-->
 									    <div class="resume-timeline-item-desc">
-										    <p>{{ job['description']  | replace('\n', '<br />') | safe }}</p>
 											{% if job['achievements'] is defined %}
 										    <h4 class="resume-timeline-item-desc-heading font-weight-bold">Achievements:</h4>
 										    <ul>
@@ -168,8 +167,44 @@
 									    </div><!--//resume-timeline-item-desc-->
 									</article><!--//resume-timeline-item-->
 								    {% endfor %}
-							    </div><!--//resume-timeline-->
-						    </div>
+								</div>
+							</div>
+						</section>
+						<section class="resume-section experience-section mb-5">
+							<h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Volunteer Experience</h2>
+							<div class="resume-section-content">
+								<!-- Volunteering section -->
+									{% for volunteer in resume.volunteer %}
+								<article class="resume-timeline-item position-relative pb-5">
+
+									<div class="resume-timeline-item-header mb-2">
+										<div class="d-flex flex-column flex-md-row">
+											<h3 class="resume-position-title font-weight-bold mb-1">{{ volunteer['title'] }}</h3>
+											<div class="resume-company-name ms-auto">{{ volunteer['company'] }}</div>
+										</div><!--//row-->
+										<div class="resume-position-time">{{ volunteer['date'] }}</div>
+									</div><!--//resume-timeline-item-header-->
+									<div class="resume-timeline-item-desc">
+										{% if volunteer['achievements'] is defined %}
+										<h4 class="resume-timeline-item-desc-heading font-weight-bold">Achievements:</h4>
+										<ul>
+											{% for achievement in volunteer['achievements'] %}
+											<li>{{ achievement | safe }}</li>
+											{% endfor %}
+										</ul>
+										{% endif %}
+										{% if volunteer['technologies'] is defined %}
+										<h4 class="resume-timeline-item-desc-heading font-weight-bold">Technologies used:</h4>
+										<ul class="list-inline">
+											{% for technology in volunteer['technologies'] | sort %}
+											<li class="list-inline-item"><span class="badge bg-secondary badge-pill">{{ technology }}</span></li>
+											{% endfor %}
+										</ul>
+										{% endif %}
+									</div><!--//resume-timeline-item-desc-->
+								</article><!--//resume-timeline-item-->
+								{% endfor %}
+							</div><!--//resume-timeline-->
 					    </section><!--//experience-section-->
 				    </div>
 				    <div class="col-lg-3">
