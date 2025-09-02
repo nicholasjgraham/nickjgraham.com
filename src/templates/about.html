@@ -153,10 +153,10 @@
                   <strong><a href="/about">/about</a></strong> - This page, of course. Similarly to the root page, Flask just inserts some variables into a static template, and serves that page to the browser. There's no automatic link creation here, though, as that should all be intentional on this page.
                 </li>
                 <li>
-                  <strong><a href="/pdf">/pdf</a></strong> - An page that serves a nice PDF copy of my resume for reliable downloading and printing. It also includes a link to redirect viewers to the web version.
+                  <strong><a href="/pdf">/pdf</a></strong> - A page that uses <a href="https://www.latex-project.org/">LaTeX</a> to serve a PDF with minimal design elements that is better formatted for ingestion by HR systems.
                 </li>
                 <li>
-                  <strong><a href="/pdf">/tex</a></strong> - Very similar to the /pdf endpoint, but this one uses <a href="https://www.latex-project.org/">LaTeX</a> to serve a version with minimal design elements that is better formatted for ingestion by HR systems. 
+                  <strong><a href="/pdf-old">/pdf-old</a></strong> - An older version of the /pdf endpoint that makes a PDF of the full site, styling included.
                 </li>
                 <li>
                   <strong><a href="/ping">/ping</a></strong> - I like to include /ping endpoints in my applications. These provide an easy way to get the operational status of the underlying web services, before you start worrying about the actual functionality of those services. If we hit /ping, and get "pong" back, we know every bit of the architecture up to and including Flask itself is working as expected. Kubernetes also uses this to know of a container is done starting up.

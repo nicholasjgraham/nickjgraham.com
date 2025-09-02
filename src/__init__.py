@@ -122,7 +122,7 @@ def about():
     return rendered_template
 
 
-@app.route('/pdf')
+@app.route('/pdf-old')
 def pdf_gen():
     """
     An endpoint that returns a download of the resume site in PDF format.
@@ -165,8 +165,8 @@ def pdf_gen():
     return response
 
 
-@app.route('/tex')
-def tex_gen():
+@app.route('/pdf')
+def pdf_tex_gen():
     """
     An endpoint that passes the resume content through a LaTeX template and returns a download of that in PDF format.
 
