@@ -259,7 +259,7 @@ def get_resume():
                 'SUSE Linux Enterprise Server',
                 'VMware',
                 'Windows Server'
-                ]
+            ]
         }
     ])
 
