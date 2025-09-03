@@ -3,9 +3,9 @@
 
 from flask import url_for
 
-# Define link_list, which will be a list of keywords that are automatically hyperlinked on the resume page
+# Define link_dict, which will be a dict of keywords that are automatically hyperlinked on the resume page
 
-link_list = {
+link_dict = {
     "Ansible": "https://www.ansible.com/",
     "Mulesoft": "https://www.mulesoft.com/",
     "Tomcat": "https://tomcat.apache.org/",
@@ -51,14 +51,14 @@ class Resume:
                     'Unless you only did one thing.',
                     'But that would be strange.'
                 ],
-                'technologies': {
+                'technologies': [
                     'These',
                     'Are',
                     'The',
                     'Technologies',
                     'You',
                     'Use'
-                }
+                ]
             },
             {
                 'title': 'Second Job Title',
@@ -72,7 +72,7 @@ class Resume:
                     'Unless you only did one thing.',
                     'But that would still be strange.'
                 ],
-                'technologies': {
+                'technologies': [
                     'These',
                     'Are',
                     'The',
@@ -80,7 +80,7 @@ class Resume:
                     'You',
                     'Also',
                     'Used'
-                }
+                ]
             }
         ]
         self.main_skills = {
@@ -95,12 +95,12 @@ class Resume:
                 'Skill 3'
             }
         }
-        self.other_skills = {
+        self.other_skills = [
             'Other Skill 1',
             'Other Skill 2',
             'Other Skill 3',
             'Other Skill 4'
-        }
+        ]
         self.education = [
             {
                 'degree': 'Latest Degree Name',
@@ -124,10 +124,10 @@ class Resume:
                 'date': '2015'
             }
         ]
-        self.interests = {
+        self.interests = [
             'Interest 1',
             'Interest 2'
-        }
+        ]
         self.volunteer = [
             {
                 'title': 'Volunteer Position Title',
@@ -224,7 +224,7 @@ def get_resume():
                 'Supported development teams, providing infrastructure and security expertise to help make project decisions and clear roadblocks.'
                 'Was part of an on-call rotation, providing support at the highest technical level to resolve production issues.'
             ],
-            'technologies': {
+            'technologies': [
                 'Ansible',
                 'Jenkins',
                 'Kubernetes',
@@ -239,27 +239,27 @@ def get_resume():
                 'Terraform',
                 'Tomcat',
                 'Windows'
-            }
+            ]
         },
         {
             'title': 'Systems Engineer',
             'company': 'Xerox Corporation',
             'date': '2013 - 2016',
             'location': 'Albany, NY',
-            'achievements': {
-                'Architected and implemented up all of the backup infrastructure required to support disaster recovery for all of the systems in my organization',
+            'achievements': [
+                'Architected and implemented up all of the backup infrastructure required to support disaster recovery for all of the systems in the organization',
                 'Led VMware expansion to two new datacenters in China, including hardware purchasing, deployment, and configuration.',
                 'Created a self-service tool for employees to build sandbox environments and adjust the scale of production services',
-                'Enhanced the system lifecycle process around all of our VMware infrastructure. Everything from creation of new servers, patching existing ones, updating configurations, and server decommissioning was streamlined and automated in some way.'
-            },
-            'technologies': {
+                'Enhanced the system lifecycle process around all of our VMware infrastructure. Everything from creation of new servers, patching, updating configurations, and server decommissioning was streamlined and automated in some way.'
+            ],
+            'technologies': [
                 'Commvault Simpana',
                 'Linux',
                 'Powershell',
                 'SUSE Linux Enterprise Server',
                 'VMware',
                 'Windows Server'
-            }
+                ]
         }
     ])
 
@@ -283,6 +283,9 @@ def get_resume():
             'Kubernetes',
             'Rancher'
         ],
+        'Databases': [
+            'MySQL'
+        ],
         'Hypervisors': [
             'Amazon Web Services',
             'VMware'
@@ -299,7 +302,7 @@ def get_resume():
         ]
     })
 
-    resume.set_other_skills({
+    resume.set_other_skills([
         'Active Directory',
         'Artificial Intelligence (AI)',
         'Change Management',
@@ -322,8 +325,7 @@ def get_resume():
         'Sonatype Nexus',
         'Source Control (Git)',
         'SSL/TLS Certificates & Ciphers'
-
-    })
+    ])
 
     resume.set_education([
         {
@@ -345,14 +347,14 @@ def get_resume():
         }
     ])
 
-    resume.set_interests({
+    resume.set_interests([
         '3D Printing',
         'Cars',
         'Landscaping',
         'Mechanics',
         'Music',
         'Robotics'
-    })
+    ])
 
     resume.set_volunteer([
         {

@@ -82,7 +82,7 @@ def root():
         None
     """
     rendered_template = render_template('index.html', resume=resume.get_resume(), environ=os.environ, current_year=current_year)
-    template_with_auto_links = utils.auto_link(rendered_template, resume.link_list)
+    template_with_auto_links = utils.auto_link(rendered_template, resume.link_dict)
     return template_with_auto_links
 
 
