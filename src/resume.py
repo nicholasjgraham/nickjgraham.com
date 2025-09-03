@@ -221,7 +221,7 @@ def get_resume():
                 'Automated the transition from CentOS to RHEL, and subsequent upgrades to RHEL 9. This reduced the amount of labor required to perform these upgrades by the whole engineering staff.',
                 'Organized and streamlined Ansible playbook usage, including the development of easy-to-use environment build scripts, and personal training/mentoring for other engineers. This enhanced the use of Ansible and improved automation capabilities for everyone\'s work across the team.',
                 'Created a custom internal site with Python that integrates with our SSO system APIs. This provides users across the company with a central place to find SSO links, rather than relying on links maintained in wikis or emails.',
-                'Supported development teams, providing infrastructure and security expertise to help make project decisions and clear roadblocks.'
+                'Supported development teams, providing infrastructure and security expertise to help make project decisions and clear roadblocks.',
                 'Was part of an on-call rotation, providing support at the highest technical level to resolve production issues.'
             ],
             'technologies': [
