@@ -149,7 +149,6 @@
 									    </div><!--//resume-timeline-item-header-->
 									    <div class="resume-timeline-item-desc">
 											{% if job['achievements'] is defined %}
-										    <h4 class="resume-timeline-item-desc-heading font-weight-bold">Achievements:</h4>
 										    <ul>
 												{% for achievement in job['achievements'] %}
 											    <li>{{ achievement | safe }}</li>
@@ -186,7 +185,6 @@
 									</div><!--//resume-timeline-item-header-->
 									<div class="resume-timeline-item-desc">
 										{% if volunteer['achievements'] is defined %}
-										<h4 class="resume-timeline-item-desc-heading font-weight-bold">Achievements:</h4>
 										<ul>
 											{% for achievement in volunteer['achievements'] %}
 											<li>{{ achievement | safe }}</li>
