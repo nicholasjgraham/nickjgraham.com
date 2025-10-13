@@ -1,10 +1,11 @@
 import base64
 import os
 import pathlib
+import utils
 
+import jinja2
 import requests
 from playwright.sync_api import sync_playwright
-import jinja2
 
 # This file contains utility functions that can be used elsewhere in the app.
 
@@ -76,6 +77,7 @@ def generate_latex_pdf(template_filename: str, data: dict) -> bytes:
     # Load the Jinja template file
     template_loader = jinja2.FileSystemLoader(f"{working_dir}/templates")
     template_env = jinja2.Environment(loader=template_loader, variable_start_string='{+', variable_end_string='+}')
+    template_env.filters['escape_latex'] = utils.escape_latex
     template = template_env.get_template(template_filename)
     latex = template.render(data)
     # Save the templated LaTeX to a file
@@ -144,3 +146,32 @@ def image_base64(file_path: str) -> str:
     file.close()
     # Return the data
     return base64.b64encode(data).decode('utf-8')
+
+
+def escape_latex(s: str) -> str:
+    """
+    Escapes special characters in a string for LaTeX.
+
+    Args:
+        s - A string to be escaped.
+
+    Returns:
+        A string with special characters escaped for LaTeX.
+    """
+    # Define a mapping of special characters to their escaped versions
+    escape_map = {
+        '\\': r'\textbackslash{}',
+        '{': r'\{',
+        '}': r'\}',
+        '$': r'\$',
+        '&': r'\&',
+        '%': r'\%',
+        '#': r'\#',
+        '_': r'\_',
+        '^': r'\^{}',
+        '~': r'\textasciitilde{}',
+    }
+    # Escape each special character in the string
+    for char, escaped in escape_map.items():
+        s = s.replace(char, escaped)
+    return s
