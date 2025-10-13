@@ -9,7 +9,7 @@ import jinja2
 # This file contains utility functions that can be used elsewhere in the app.
 
 
-def auto_link(data: str, link_list: dict) -> str:
+def auto_link(data: str, link_dict: dict) -> str:
     """
     This runs through a string and replaces the first instance of keys from a dict with values of those dicts.
     The intention is to find values like "Google" and replace them with "<a href="https://google.com">Google</a>"
@@ -25,7 +25,7 @@ def auto_link(data: str, link_list: dict) -> str:
         None
     """
     # Iterate through our dict object
-    for key, value in link_list.items():
+    for key, value in link_dict.items():
         # Replace the first instance of the dict key with the replacement value
         data = data.replace(f" {key} ", f" <a href=\"{value}\">{key}</a> ", 1)
         data = data.replace(f" {key},", f" <a href=\"{value}\">{key}</a>,", 1)

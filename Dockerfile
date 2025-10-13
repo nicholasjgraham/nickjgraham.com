@@ -1,4 +1,4 @@
-FROM python:3.12
+FROM python:3.12-bookworm
 # Set working directory to /usr/src/app
 WORKDIR /usr/src/app
 # Update apt cache

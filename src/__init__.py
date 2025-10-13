@@ -82,7 +82,7 @@ def root():
         None
     """
     rendered_template = render_template('index.html', resume=resume.get_resume(), environ=os.environ, current_year=current_year)
-    template_with_auto_links = utils.auto_link(rendered_template, resume.link_list)
+    template_with_auto_links = utils.auto_link(rendered_template, resume.link_dict)
     return template_with_auto_links
 
 
@@ -122,7 +122,7 @@ def about():
     return rendered_template
 
 
-@app.route('/pdf')
+@app.route('/pdf-old')
 def pdf_gen():
     """
     An endpoint that returns a download of the resume site in PDF format.
@@ -165,8 +165,8 @@ def pdf_gen():
     return response
 
 
-@app.route('/tex')
-def tex_gen():
+@app.route('/pdf')
+def pdf_tex_gen():
     """
     An endpoint that passes the resume content through a LaTeX template and returns a download of that in PDF format.
 

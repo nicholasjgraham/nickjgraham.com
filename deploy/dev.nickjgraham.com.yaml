@@ -1,11 +1,11 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: nickjgrahamcomdev
-  namespace: nickjgrahamcomdev
+  name: devnickjgrahamcom
+  namespace: devnickjgrahamcom
 spec:
   selector:
-    app: nickjgrahamcomdev
+    app: devnickjgrahamcom
   type: NodePort
   ports:
     - protocol: TCP
@@ -15,24 +15,24 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nickjgrahamcomdev
-  namespace: nickjgrahamcomdev
+  name: devnickjgrahamcom
+  namespace: devnickjgrahamcom
   labels:
-    app: nickjgrahamcomdev
+    app: devnickjgrahamcom
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nickjgrahamcomdev
+      app: devnickjgrahamcom
 
   template:
     metadata:
       labels:
-        app: nickjgrahamcomdev
+        app: devnickjgrahamcom
   
     spec:
       containers:
-      - name: nickjgrahamcomdev
+      - name: devnickjgrahamcom
         image: nicholasjgraham/nickjgraham.com:latest
         imagePullPolicy: Always
         env:
@@ -72,22 +72,23 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   labels:
-    app: nickjgrahamcomdev
-  name: nickjgrahamcomdev
-  namespace: nickjgrahamcomdev
+    app: devnickjgrahamcom
+  name: devnickjgrahamcom
+  namespace: devnickjgrahamcom
 spec:
   rules:
-  - host: nickjgraham-dev.nickwork.net
+  - host: dev.nickjgraham.com
     http:
       paths:
       - backend:
           service:
-            name: nickjgrahamcomdev
+            name: devnickjgrahamcom
             port:
               number: 8080
         path: /
         pathType: Prefix
   tls:
     - hosts:
-      - nickjgraham-dev.nickwork.net
+      - dev.nickjgraham.com
+      - devnickjgraham.nickwork.net
       secretName: wildcard.nickwork.net

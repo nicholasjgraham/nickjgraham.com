@@ -153,10 +153,10 @@
                   <strong><a href="/about">/about</a></strong> - This page, of course. Similarly to the root page, Flask just inserts some variables into a static template, and serves that page to the browser. There's no automatic link creation here, though, as that should all be intentional on this page.
                 </li>
                 <li>
-                  <strong><a href="/pdf">/pdf</a></strong> - An page that serves a nice PDF copy of my resume for reliable downloading and printing. It also includes a link to redirect viewers to the web version.
+                  <strong><a href="/pdf">/pdf</a></strong> - A page that uses <a href="https://www.latex-project.org/">LaTeX</a> to serve a PDF with minimal design elements that is better formatted for ingestion by HR systems.
                 </li>
                 <li>
-                  <strong><a href="/pdf">/tex</a></strong> - Very similar to the /pdf endpoint, but this one uses <a href="https://www.latex-project.org/">LaTeX</a> to serve a version with minimal design elements that is better formatted for ingestion by HR systems. 
+                  <strong><a href="/pdf-old">/pdf-old</a></strong> - An older version of the /pdf endpoint that makes a PDF of the full site, styling included.
                 </li>
                 <li>
                   <strong><a href="/ping">/ping</a></strong> - I like to include /ping endpoints in my applications. These provide an easy way to get the operational status of the underlying web services, before you start worrying about the actual functionality of those services. If we hit /ping, and get "pong" back, we know every bit of the architecture up to and including Flask itself is working as expected. Kubernetes also uses this to know of a container is done starting up.
@@ -186,7 +186,7 @@
               </ul>
             </p>
             <img src="{{ url_for('static', filename='images/k8s_flow.png') }}" class="img-fluid">
-            <p>There is also a similar copy of this for <code>nickjgraham-dev.nickwork.net</code>, which is the development version of this site, and is only privately accessible.</p>
+            <p>There is also a similar copy of this for <code>dev.nickwork.net</code>, which is the development version of this site.</p>
           </section>
           
       <hr class="divider">
@@ -317,7 +317,7 @@
             <p>To browse, visit <code>http://&lt;your docker host&gt;:8080</code>. Easy!</p>
             <h3>Python</h3>
             <p>Running on Python requires a bit of extra setup. First, make sure you have Python 3.12.x installed. There's probably something in your package manager you can use, or you can compile from source <a href="https://www.python.org/ftp/python/3.12.0/Python-3.12.0.tgz">here</a>.</p>
-            <p>In order to run the <code>/tex</code> endpoint you'll need the <code>pdflatex</code> utility. On Ubuntu you can get this by running:</p>
+            <p>In order to run the <code>/pdf</code> endpoint you'll need the <code>pdflatex</code> utility. On Ubuntu you can get this by running:</p>
               <code>sudo apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra</code>
             <p>Then, you'll need to make sure you have git installed. You should install git using your package manager.</p>
             <p>With those ready, you can run through the set up steps.</p>

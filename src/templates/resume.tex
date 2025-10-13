@@ -53,13 +53,8 @@ right=0.5in]{geometry}              % specify right page margin
 {% for job in resume.work_experience %}
 \textbf{{+ job.title +}} -- {{+ job.company +}} -- {+ job.location +} \hfill \textbf{{+ job.date +}} \\
 
-{% if job.description is defined %}
-  \begin{quote}{{+ job.description +}}
-  \end{quote}
-{% endif %}
-
 {% if job.achievements is defined %}
-\vspace{-9pt}
+\vspace{-5pt}
   \begin{itemize}
     {% for achievement in job.achievements %}
     \item {+ achievement +}
@@ -69,6 +64,12 @@ right=0.5in]{geometry}              % specify right page margin
 {% endfor %}
 
 \vspace{-18.5pt}
+
+% volunteer section
+\section*{Volunteering}
+{% for volunteer in resume.volunteer %}
+\textbf{{+ volunteer.title +}} -- {+ volunteer.company +} -- {+ volunteer.location +} \hfill \textbf{{+ volunteer.date +}} \\
+{% endfor %}
 
 % certification section
 \section*{Certifications}
